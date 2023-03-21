@@ -1,4 +1,4 @@
-# Develop code using GitHub Codespaces and Visual Studio Code!
+# Code with GitHub Codespaces and Visual Studio Code
 
 <!--step0-->
 
