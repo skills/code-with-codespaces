@@ -1,7 +1,8 @@
 name: Step 4, 4-Personalize your Codespace
+
 # This step triggers after TBD-step-4-event-desc
 # This step sets STEP to X
-# This step closes <details id=3> and opens <details X>
+# This step closes <details id=4> and opens <details X>
 
 # This will run every time we TBD-step-4-event-desc
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
@@ -12,7 +13,7 @@ on:
       - main
     paths:
       - '.github/dependabot.yml'
-      
+
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
   # Need `contents: read` to checkout the repository
@@ -33,7 +34,7 @@ jobs:
           echo "current_step=$(cat ./.github/script/STEP)" >> $GITHUB_OUTPUT
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
-      
+
   on_TBD-step-4-event:
     name: On TBD-step-4-event
     needs: get_current_step
@@ -65,8 +66,8 @@ jobs:
         env:
           FILE: "dotfiles/setup.sh"
           SEARCH: "Codespace"
-          
-      # Update README to close <details id=3> and open <details id=X>
+
+      # Update README to close <details id=4> and open <details id=X>
       # and set STEP to 'X'
       - name: Update to step X
         uses: skills/action-update-step@v1

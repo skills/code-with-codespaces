@@ -32,7 +32,7 @@ jobs:
           echo "current_step=$(cat ./.github/script/STEP)" >> $GITHUB_OUTPUT
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
-      
+
   on_add_dependency:
     name: On Add dependency
     needs: get_current_step
@@ -64,7 +64,7 @@ jobs:
         env:
           FILE: "index.html"
           SEARCH: "Hello from the codespace"
-      
+
       # Update README to close <details id=1> and open <details id=2>
       # and set STEP to '2'
       - name: Update to step 2

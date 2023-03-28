@@ -30,7 +30,7 @@ jobs:
           echo "current_step=$(cat ./.github/script/STEP)" >> $GITHUB_OUTPUT
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
-      
+
   on_start:
     name: On start
     needs: get_current_step
