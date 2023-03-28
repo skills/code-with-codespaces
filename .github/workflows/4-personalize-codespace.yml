@@ -12,7 +12,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/dependabot.yml'
+      - 'setup.sh'
 
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -64,8 +64,8 @@ jobs:
           chmod a+x .github/script/check-file.sh
           ./.github/script/check-file.sh
         env:
-          FILE: "dotfiles/setup.sh"
-          SEARCH: "Codespace"
+          FILE: "setup.sh"
+          SEARCH: "install sl"
 
       # Update README to close <details id=4> and open <details id=X>
       # and set STEP to 'X'
