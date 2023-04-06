@@ -67,7 +67,7 @@ To begin developing using GitHub Codespaces, you can create a codespace from a t
 1. Start from the landing page of your repository.
 1. Click the green **Code** button located in the middle of the page.
 1. Select the **Codespaces** tab in the box that pops up and then click the **Create codespace on main** button.
-   > Wait about 2 minutes for the codespace to spin itself up.
+   > Wait about **2 minutes** for the codespace to spin itself up.
    > **Note**: It's a virtual machine spinning up in the background.
 
 1. Verify your codespace is running. The browser should contain a VS Code web-based editor and a terminal should be present such as the below:
@@ -133,7 +133,7 @@ Let's add a `devcontainer.json` file and add a custom image.
 1. Click the green **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
 1. Click the **Create codespace on main** button OR click the `+` sign on the tab. This will create a new codespace on the main branch. (Notice your other codespace listed here.)
-   > **Wait about 2 minutes for the codespace to spin itself up.**
+   > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify that your new codespace is is running, as you did previously.
 
@@ -177,7 +177,7 @@ Let's customize some settings in the `.devcontainer.json` file!
 1. Click the **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
 1. Click the **Create codespace on main** button.
-   > **Wait about 2 minutes for the codespace to spin itself up.**
+   > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify your codespace is running, as you did previously.
 1. The `codespace.md` file should show up in the VS Code editor.
@@ -200,7 +200,7 @@ Next lets add some code to run upon creation of the codespace!
 1. Click the **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
 1. Click the **Create codespace on main** button.
-   > **Wait about 2 minutes for the codespace to spin itself up.**
+   > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify your codespace is running, as you did previously.
 1. Verify the `codespace.md` file now has the text `Writing code upon codespace creation!`.
@@ -235,7 +235,7 @@ Let's see how this works!
 1. Click the **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
 1. Click the **Create codespace on main** button.
-   > **Wait about 2 minutes for the codespace to spin itself up.**
+   > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify your codespace is running. The browser should contain a VS Code web-based editor and a terminal should be present such as the below:
 ![codespace1](https://user-images.githubusercontent.com/26442605/207355196-71aab43f-35a9-495b-bcfe-bf3773c2f1b3.png)
@@ -263,7 +263,7 @@ git push
 1. Switch back to the homepage of your repository and view the `setup.sh` to verify the new code was pushed to your repository.
 1. Close the codespace web browser tab.
 1. Click the **Create codespace on main** button.
-   > **Wait about 2 minutes for the codespace to spin itself up.**
+   > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify your codespace is running, as you did previously.
 1. Verify the `setup.sh` file is present in your VS Code editor.
