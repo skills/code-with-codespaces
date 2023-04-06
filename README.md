@@ -67,7 +67,7 @@ To begin developing using GitHub Codespaces, you can create a codespace from a t
 1. Start from the landing page of your repository.
 1. Click the green **Code** button located in the middle of the page.
 1. Select the **Codespaces** tab in the box that pops up and then click the **Create codespace on main** button.
-   > Wait about **2 minutes** for the codespace to spin itself up.
+   > Wait about 2 minutes for the codespace to spin itself up.
    > **Note**: It's a virtual machine spinning up in the background.
 
 1. Verify your codespace is running. The browser should contain a VS Code web-based editor and a terminal should be present such as the below:
