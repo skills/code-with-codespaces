@@ -1,6 +1,27 @@
+<!--
+  <<< Author notes: Header of the course >>>
+  Read <https://skills.github.com/quickstart> for more information about how to build courses using this template.
+  Include a 1280×640 image, course name in sentence case, and a concise description in emphasis.
+  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
+  Next to "About", add description & tags; disable releases, packages, & environments.
+  Add your open source license, GitHub uses the MIT license.
+-->
+
 # Code with GitHub Codespaces and Visual Studio Code
 
-<!--step0-->
+_Create workflows that enable you to use Continuous Integration (CI) for your projects._
+
+<!--
+  <<< Author notes: Start of the course >>>
+  Include start button, a note about Actions minutes,
+  and tell the learner why they should take the course.
+  Each step should be wrapped in <details>/<summary>, with an `id` set.
+  The start <details> should have `open` as well.
+  Do not use quotes on the <details> tag attributes.
+-->
+
+<details id=0 open>
+<summary><h2>Welcome</h2></summary>
 
 GitHub Codespaces is a development environment that's hosted in the cloud.
 
@@ -10,19 +31,17 @@ GitHub Codespaces is a development environment that's hosted in the cloud.
 - **Prerequisites**: None
 - **Timing**: This course is four steps long and can be completed in less than an hour
 
-<summary><h2> How to start this course!</h2></summary>
- 
-1. Above these instructions, click **Use this template**.
-2. From the dropdown right-click **Create a new repository** and open the link in a new tab.
-![Screen Shot 2023-03-07 at 9 28 54 AM](https://user-images.githubusercontent.com/26442605/223501605-e67051f7-50af-4ae0-a18f-6f733a8b6c62.png)
-3. In the new tab, follow the prompts to create a new repository.
+## How to start this course
+
+1. Right-click **Start course** and open the link in a new tab.
+   <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](TBD-generate)
+2. In the new tab, follow the prompts to create a new repository.
    - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository because private repositories will use [Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   ![Create a new repository](https://user-images.githubusercontent.com/1221423/169618722-406dc508-add4-4074-83f0-c7a7ad87f6f3.png)
-4. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+   - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+   ![Create a new repository](https://user-images.githubusercontent.com/1221423/218594143-e60462b6-9f2a-4fa3-80de-063ac5429aab.png)
+3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-<!--endstep0-->
-
+</details>
 
 <details id=1>
 <summary><h2>Step 1: Create your first codespace and push code</h2></summary>
