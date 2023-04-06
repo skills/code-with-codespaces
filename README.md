@@ -67,8 +67,8 @@ To begin developing using GitHub Codespaces, you can create a codespace from a t
 1. Start from the landing page of your repository.
 1. Click the green **Code** button located in the middle of the page.
 1. Select the **Codespaces** tab in the box that pops up and then click the **Create codespace on main** button.
-   > **Wait about 2 minutes for the codespace to spin itself up.**
-   > **Note**: **It's a virtual machine spinning up in the background.**
+   > Wait about 2 minutes for the codespace to spin itself up.
+   > **Note**: It's a virtual machine spinning up in the background.
 
 1. Verify your codespace is running. The browser should contain a VS Code web-based editor and a terminal should be present such as the below:
 ![codespace1](https://user-images.githubusercontent.com/26442605/207355196-71aab43f-35a9-495b-bcfe-bf3773c2f1b3.png)
@@ -80,7 +80,8 @@ To begin developing using GitHub Codespaces, you can create a codespace from a t
 ```
 <h1>Hello from the codespace!</h1>
 ```
-1. Save the file. **Note**: The file should autosave.
+1. Save the file.
+   > **Note**: The file should autosave.
 1. Use the VS Code terminal to commit the file change by entering the following commit message:
 ```
 git commit -a -m "Adding hello from the codespace!"
@@ -248,7 +249,8 @@ sudo apt-get update
 sudo apt-get install sl
 ```
 
-1. Save the file. **Note**: The file should autosave.
+1. Save the file.
+   > **Note**: The file should autosave.
 1. Commit the file changes. From the VS Code terminal enter:
 ```
 git add setup.sh --chmod=+x
