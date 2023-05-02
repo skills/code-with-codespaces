@@ -1,10 +1,10 @@
 name: Step 4, 4-Personalize your Codespace
 
-# This step triggers after TBD-step-4-event-desc
+# This step triggers after push to main#setup.sh
 # This step sets STEP to X
 # This step closes <details id=4> and opens <details X>
 
-# This will run every time we TBD-step-4-event-desc
+# This will run every time we push to main#setup.sh
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
@@ -35,8 +35,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_TBD-step-4-event:
-    name: On TBD-step-4-event
+  on_update_setup:
+    name: On update setup
     needs: get_current_step
 
     # We will only run this action when:
