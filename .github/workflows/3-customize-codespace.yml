@@ -1,6 +1,6 @@
 name: Step 3, 3-Customize Codespace
 
-# This step triggers after TBD-step-3-event-desc
+# This step triggers after we push to main
 # This step sets STEP to 4
 # This step closes <details id=3> and opens <details id=4>
 
