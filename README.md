@@ -12,12 +12,9 @@
 _Create workflows that enable you to use Continuous Integration (CI) for your projects._
 
 <!--
-  <<< Author notes: Start of the course >>>
+  <<< Author notes: Course start >>>
   Include start button, a note about Actions minutes,
   and tell the learner why they should take the course.
-  Each step should be wrapped in <details>/<summary>, with an `id` set.
-  The start <details> should have `open` as well.
-  Do not use quotes on the <details> tag attributes.
 -->
 
 <details id=0 open>
@@ -29,9 +26,15 @@ GitHub Codespaces is a development environment that's hosted in the cloud.
 - **What you'll learn**: How to create a codespace, push code from a codespace, select a custom image, and customize a codespace.
 - **What you'll build**: A codespace with devcontainer.json files, customizations, and personalizations.
 - **Prerequisites**: If you need to learn about Visual Studio Code, read [Visual Studio Code Docs](https://code.visualstudio.com/docs) first.
-- **How long**: This course is four steps long and can be completed in less than an hour.
+- **How long**: This course  can be completed in less than an hour.
 
-## How to start this course
+In this course, you will:
+
+1.
+2.
+3.
+
+### How to start this course
 
 <!-- For start course, run in JavaScript:
 'https://github.com/new?' + new URLSearchParams({
