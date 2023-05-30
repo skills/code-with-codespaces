@@ -4,7 +4,7 @@ _Nice work! :tada: You created your first codespace and pushed code using VS Cod
 
 You can configure the development container for a repository so that any codespace created for that repository will give you a tailored development environment, complete with all the tools and runtimes you need to work on a specific project.
 
-**What are development containers?**  Development containers, or dev containers, are Docker containers that are specifically configured to provide a fully featured development environment. Whenever you work in a codespace, you are using a dev container on a virtual machine.
+**What are development containers?** Development containers, or dev containers, are Docker containers that are specifically configured to provide a fully featured development environment. Whenever you work in a codespace, you are using a dev container on a virtual machine.
 
 A dev container file is a JSON file that lets you customize the default image that runs your codespace, VS code settings, run custom code, forward ports and much more!
 
@@ -14,10 +14,13 @@ Let's add a `devcontainer.json` file and add a custom image.
 
 1. Navigating back to your **Code** tab of your repository, click the **Add file** drop-down button, and then click `Create new file`.
 1. Type or paste the following in the empty text field prompt to name your file.
+
 ```
 .devcontainer/devcontainer.json
 ```
+
 1. In the body of the new **.devcontainer/devcontainer.json** file, add the following content:
+
 ```
 {
     // Name this configuration
@@ -29,11 +32,13 @@ Let's add a `devcontainer.json` file and add a custom image.
     "overrideCommand": false
 }
 ```
+
 1. Click **Commit changes** and then select **Commit changes directly to the `main` branch**.
 1. Create a new codespace by navigating back to the **Code** tab of your repository.
 1. Click the green **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
 1. Click the **Create codespace on main** button OR click the `+` sign on the tab. This will create a new codespace on the main branch. (Notice your other codespace listed here.)
+
    > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify that your new codespace is is running, as you did previously.

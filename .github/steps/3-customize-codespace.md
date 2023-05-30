@@ -10,6 +10,7 @@ Let's customize some settings in the `.devcontainer.json` file!
 
 1. Navigate to the `.devcontainer/devcontainer.json` file.
 1. Add the following customizations to the body of the file before the last `}`.
+
 ```
     ,
     // Add the IDs of extensions you want installed when the container is created.
@@ -26,11 +27,13 @@ Let's customize some settings in the `.devcontainer.json` file!
         }
     }
 ```
+
 1. Click **Commit changes** and then select **Commit changes directly to the `main` branch**.
 1. Create a new codespace by navigating to the landing page of your repository.
 1. Click the **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
 1. Click the **Create codespace on main** button.
+
    > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify your codespace is running, as you did previously.
@@ -45,15 +48,18 @@ Next lets add some code to run upon creation of the codespace!
 
 1. Edit the `.devcontainer/devcontainer.json` file.
 1. Add the following postCreateCommand to the body of the file before the last `}`.
+
 ```
     ,
     "postCreateCommand": "echo '# Writing code upon codespace creation!'  >> codespace.md"
 ```
+
 1. Click **Commit changes** and then select **Commit changes directly to the `main` branch**.
 1. Create a new codespace by navigating to the landing page of your repository.
 1. Click the **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
 1. Click the **Create codespace on main** button.
+
    > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify your codespace is running, as you did previously.
