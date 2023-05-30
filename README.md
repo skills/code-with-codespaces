@@ -29,7 +29,7 @@ GitHub Codespaces is a development environment that's hosted in the cloud.
 - **What you'll learn**: How to create a codespace, push code from a codespace, select a custom image, and customize a codespace.
 - **What you'll build**: A codespace with devcontainer.json files, customizations, and personalizations.
 - **Prerequisites**: If you need to learn about Visual Studio Code, read [Visual Studio Code Docs](https://code.visualstudio.com/docs) first.
-- **How long**: This course  can be completed in less than an hour.
+- **How long**: This course can be completed in less than an hour.
 
 In this course, you will:
 
