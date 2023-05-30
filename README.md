@@ -17,8 +17,7 @@ _Create workflows that enable you to use Continuous Integration (CI) for your pr
   and tell the learner why they should take the course.
 -->
 
-<details id=0 open>
-<summary><h2>Welcome</h2></summary>
+## Welcome
 
 GitHub Codespaces is a development environment that's hosted in the cloud.
 
@@ -56,10 +55,9 @@ In this course, you will:
    - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-</details>
 
-<details id=1>
-<summary><h2>Step 1: Create your first codespace and push code</h2></summary>
+
+## Step 1: Create your first codespace and push code
 
 _Welcome to "Develop code using GitHub Codespaces and Visual Studio Code"! :wave:_
 
@@ -109,10 +107,9 @@ git push
 1. Switch back to the homepage of your repository and view the `index.html` to verify the new code was pushed to your repository.
 1. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
 
-<details id=2>
-<summary><h2>Step 2: Add a custom image to your codespace!</h2></summary>
+
+## Step 2: Add a custom image to your codespace!
 
 _Nice work! :tada: You created your first codespace and pushed code using VS Code!_
 
@@ -156,10 +153,9 @@ Note the image being used is the default image provided for GitHub Codespaces. I
 
 1. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
 
-<details id=3>
-<summary><h2>Step 3: Customize your codespace!</h2></summary>
+
+## Step 3: Customize your codespace!
 
 _Nice work! :tada: You created a codespace with a custom image!_
 
@@ -221,10 +217,9 @@ Next lets add some code to run upon creation of the codespace!
 1. Verify the `codespace.md` file now has the text `Writing code upon codespace creation!`.
 1. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
 
-<details id=4>
-<summary><h2>Step 4: Personalize your codespace!</h2></summary>
+
+## Step 4: Personalize your codespace!
 
 _Nicely done customizing your codespace!_ :partying_face:
 
@@ -288,10 +283,9 @@ git push
 ```
 1. Enjoy the show!
 
-</details>
 
-<details id=X>
-<summary><h2>Finish</h2></summary>
+
+## Finish
 
 _Congratulations friend, you've completed this course!_
 
@@ -320,7 +314,7 @@ Here's a recap of all the tasks you've accomplished in your repository:
 - [Read the Get started with GitHub docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
-</details>
+
 
 ---
 
