@@ -1,4 +1,4 @@
-name: Step 4, 4-Personalize your Codespace
+name: Step 4, Personalize your Codespace
 
 # This step triggers after push to main#setup.sh.
 # This workflow updates from step 4 to step X.

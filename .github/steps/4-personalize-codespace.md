@@ -1,3 +1,9 @@
+<!--
+  <<< Author notes: Step 4 >>>
+  Start this step by acknowledging the previous step.
+  Define terms and link to docs.github.com.
+-->
+
 ## Step 4: Personalize your codespace!
 
 _Nicely done customizing your codespace!_ :partying_face:
@@ -28,32 +34,33 @@ Let's see how this works!
    > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify your codespace is running. The browser should contain a VS Code web-based editor and a terminal should be present such as the below:
+
    ![codespace1](https://user-images.githubusercontent.com/26442605/207355196-71aab43f-35a9-495b-bcfe-bf3773c2f1b3.png)
 
 1. From inside the codespace in the VS Code explorer window, create a new file `setup.sh`.
 1. Add the following code inside of the file:
 
-```
-#!/bin/bash
+   ```bash
+   #!/bin/bash
 
-sudo apt-get update
-sudo apt-get install sl
-```
+   sudo apt-get update
+   sudo apt-get install sl
+   ```
 
 1. Save the file.
    > **Note**: The file should autosave.
 1. Commit the file changes. From the VS Code terminal enter:
 
-```
-git add setup.sh --chmod=+x
-git commit -m "Adding setup.sh from the codespace!"
-```
+   ```shell
+   git add setup.sh --chmod=+x
+   git commit -m "Adding setup.sh from the codespace!"
+   ```
 
 1. Push the changes back to your repository. From the VS Code terminal, enter:
 
-```
-git push
-```
+   ```shell
+   git push
+   ```
 
 1. Switch back to the homepage of your repository and view the `setup.sh` to verify the new code was pushed to your repository.
 1. Close the codespace web browser tab.
@@ -65,9 +72,9 @@ git push
 1. Verify the `setup.sh` file is present in your VS Code editor.
 1. From the VS Code terminal, type or paste:
 
-```
-/usr/games/sl
-```
+   ```shell
+   /usr/games/sl
+   ```
 
 1. Enjoy the show!
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.

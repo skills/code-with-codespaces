@@ -1,4 +1,4 @@
-name: Step 3, 3-Customize Codespace
+name: Step 3, Customize Codespace
 
 # This step triggers after we push to main.
 # This workflow updates from step 3 to step 4.

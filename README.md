@@ -62,6 +62,11 @@ In this course, you will:
 
 <footer>
 
+<!--
+  <<< Author notes: Footer >>>
+  Add a link to get support, GitHub status page, code of conduct, license link.
+-->
+
 ---
 
 Get help: [Review the GitHub status page](https://www.githubstatus.com/)

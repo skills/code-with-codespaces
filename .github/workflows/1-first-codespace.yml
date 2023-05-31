@@ -1,4 +1,4 @@
-name: Step 1, 1-Create codespace and push code
+name: Step 1, Create codespace and push code
 
 # This step triggers after push to main.
 # This workflow updates from step 1 to step 2.

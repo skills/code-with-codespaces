@@ -1,3 +1,11 @@
+<!--
+  <<< Author notes: Step 1 >>>
+  Choose 3-5 steps for your course.
+  The first step is always the hardest, so pick something easy!
+  Link to docs.github.com for further explanations.
+  Encourage users to open new tabs for steps!
+-->
+
 ## Step 1: Create your first codespace and push code
 
 _Welcome to "Develop code using GitHub Codespaces and Visual Studio Code"! :wave:_
@@ -33,23 +41,23 @@ To begin developing using GitHub Codespaces, you can create a codespace from a t
 1. From inside the codespace in the VS Code explorer window, select the `index.html` file.
 1. Replace the **h1** header with the below:
 
-```
-<h1>Hello from the codespace!</h1>
-```
+   ```html
+   <h1>Hello from the codespace!</h1>
+   ```
 
 1. Save the file.
    > **Note**: The file should autosave.
 1. Use the VS Code terminal to commit the file change by entering the following commit message:
 
-```
-git commit -a -m "Adding hello from the codespace!"
-```
+   ```shell
+   git commit -a -m "Adding hello from the codespace!"
+   ```
 
 1. Push the changes back to your repository. From the VS Code terminal, enter:
 
-```
-git push
-```
+   ```shell
+   git push
+   ```
 
 1. Your code has been pushed to your repository!
 1. Switch back to the homepage of your repository and view the `index.html` to verify the new code was pushed to your repository.
