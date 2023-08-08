@@ -11,7 +11,7 @@
 
 # Code with GitHub Codespaces and Visual Studio Code
 
-_Create workflows that enable you to use Continuous Integration (CI) for your projects._
+_Develop code using GitHub Codespaces and Visual Studio Code!_
 
 </header>
 
