@@ -59,7 +59,7 @@ jobs:
         uses: skills/action-check-file@v1
         with:
           file: ".devcontainer/devcontainer.json"
-          search: "mcr.microsoft.com/vscode/devcontainers/universal:latest"
+          search: "mcr\\.microsoft\\.com/vscode/devcontainers/universal:latest"
 
       # In README.md, switch step 2 for step 3.
       - name: Update to step 3
