@@ -6,7 +6,7 @@ name: Step 0, Welcome
 # This will run every time we create push a commit to `main`.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  create:
+  push:
   workflow_dispatch:
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
