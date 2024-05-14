@@ -38,6 +38,10 @@ Let's customize some settings in the `devcontainer.json` file!
 1. Create a new codespace by navigating to the landing page of your repository.
 1. Click the **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
+1. Ensure the number of active codespaces does not reach the maximum (typically 2). For more information, see [understanding the codespace lifecycle](https://docs.github.com/en/codespaces/getting-started/understanding-the-codespace-lifecycle).
+
+   > **Tip**: To stop an active codespace, click the **•••** next to **<span>&#x25cf;</span>Active** and select **Stop codespace** from the menu.
+   
 1. Click the **Create codespace on main** button.
 
    > Wait about **2 minutes** for the codespace to spin itself up.
