@@ -1,9 +1,9 @@
 name: Step 4, Personalize your Codespace
 
-# This step triggers after push to main#setup.sh.
+# This step triggers after push to main#install.sh.
 # This workflow updates from step 4 to step X.
 
-# This will run every time we push to main#setup.sh.
+# This will run every time we push to main#install.sh.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ on:
     branches:
       - main
     paths:
-      - "setup.sh"
+      - "install.sh"
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -56,11 +56,11 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches.
 
-      # Verify the setup.sh added the file contents.
+      # Verify the install.sh added the file contents.
       - name: Check workflow contents, jobs
         uses: skills/action-check-file@v1
         with:
-          file: "setup.sh"
+          file: "install.sh"
           search: "install sl"
 
       # In README.md, switch step 4 for step X.

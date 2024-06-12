@@ -37,7 +37,7 @@ Let's see how this works!
 
    ![codespace1](https://user-images.githubusercontent.com/26442605/207355196-71aab43f-35a9-495b-bcfe-bf3773c2f1b3.png)
 
-1. From inside the codespace in the VS Code explorer window, create a new file `setup.sh`.
+1. From inside the codespace in the VS Code explorer window, create a new file `install.sh`.
 1. Add the following code inside of the file:
 
    ```bash
@@ -52,8 +52,8 @@ Let's see how this works!
 1. Commit the file changes. From the VS Code terminal enter:
 
    ```shell
-   git add setup.sh --chmod=+x
-   git commit -m "Adding setup.sh from the codespace!"
+   git add install.sh --chmod=+x
+   git commit -m "Adding install.sh from the codespace!"
    ```
 
 1. Push the changes back to your repository. From the VS Code terminal, enter:
@@ -62,14 +62,14 @@ Let's see how this works!
    git push
    ```
 
-1. Switch back to the homepage of your repository and view the `setup.sh` to verify the new code was pushed to your repository.
+1. Switch back to the homepage of your repository and view the `install.sh` to verify the new code was pushed to your repository.
 1. Close the codespace web browser tab.
 1. Click the **Create codespace on main** button.
 
    > Wait about **2 minutes** for the codespace to spin itself up.
 
 1. Verify your codespace is running, as you did previously.
-1. Verify the `setup.sh` file is present in your VS Code editor.
+1. Verify the `install.sh` file is present in your VS Code editor.
 1. From the VS Code terminal, type or paste:
 
    ```shell
