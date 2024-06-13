@@ -45,6 +45,7 @@ Let's see how this works!
 
    sudo apt-get update
    sudo apt-get install sl
+   alias sl="/usr/games/sl"
    ```
 
 1. Save the file.
@@ -73,7 +74,7 @@ Let's see how this works!
 1. From the VS Code terminal, type or paste:
 
    ```shell
-   /usr/games/sl
+   sl
    ```
 
 1. Enjoy the show!
