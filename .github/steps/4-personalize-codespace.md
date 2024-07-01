@@ -38,14 +38,14 @@ Let's see how this works!
    ![codespace1](https://user-images.githubusercontent.com/26442605/207355196-71aab43f-35a9-495b-bcfe-bf3773c2f1b3.png)
 
 1. From inside the codespace in the VS Code explorer window, create a new file `setup.sh`.
-1. Add the following code inside of the file:
+1. Enter the following code into the file:
 
    ```bash
    #!/bin/bash
 
    sudo apt-get update
    sudo apt-get install sl
-   alias sl="/usr/games/sl"
+   export PATH=$PATH:/usr/games
    ```
 
 1. Save the file.
