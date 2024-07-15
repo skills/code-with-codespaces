@@ -45,7 +45,7 @@ Let's see how this works!
 
    sudo apt-get update
    sudo apt-get install sl
-   echo 'export PATH='"$PATH"':/usr/games' >> ~/.bashrc
+   echo "export PATH=\$PATH:/usr/games" >> ~/.bashrc
    ```
 
 1. Save the file.
