@@ -47,7 +47,7 @@ Let's add a `devcontainer.json` file and add a custom image.
 
    > Wait about **2 minutes** for the codespace to spin itself up.
 
-1. Verify that your new codespace is is running, as you did previously.
+1. Verify that your new codespace is running, as you did previously.
 
    Note the image being used is the default image provided for GitHub Codespaces. It includes runtimes and tools for Python, Node.js, Docker, and more. See the full list here: https://aka.ms/ghcs-default-image. Your development team can use any custom image that has the necessary prerequisites installed. For more information, see [codespace image](https://aka.ms/configure-codespace).
 
