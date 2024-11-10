@@ -22,7 +22,7 @@ Let's see how this works!
 1. In the upper-right corner of any page, click your profile photo, and then click **Settings**.
 1. In the **Code, planning, and automation** section of the sidebar, click **Codespaces**.
 1. Under **Dotfiles**, select **Automatically install dotfiles** so that GitHub Codespaces automatically installs your dotfiles into every new codespace you create.
-1. Click **Select repository** and then choose your current skills working repository as the repository from which to install dotfiles.
+1. Click **Select repository** and then choose your current skills working repository as the repository from which to install dotfiles. Note you may need to start to enter the repository name in order for it to select it in the drop down list.
 
 ### :keyboard: Activity: Add a `dotfile` to your repository and run your codespace
 
@@ -44,7 +44,7 @@ Let's see how this works!
    #!/bin/bash
 
    sudo apt-get update
-   sudo apt-get install sl
+   sudo apt-get install -y sl
    echo "export PATH=\$PATH:/usr/games" >> ~/.bashrc
    ```
 
