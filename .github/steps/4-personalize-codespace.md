@@ -68,6 +68,7 @@ Let's see how this works!
 1. Click the **Create codespace on main** button.
 
    > Wait about **2 minutes** for the codespace to spin itself up.
+   > **Note:** Running commands before the codespace is fully set up might result in errors. If an error occurs, please open a new codespace and wait a sufficient amount of time before trying again.
 
 1. Verify your codespace is running, as you did previously.
 1. Verify the `setup.sh` file is present in your VS Code editor.
