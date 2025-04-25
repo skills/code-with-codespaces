@@ -65,6 +65,13 @@ Let's see how this works!
 
 1. Switch back to the homepage of your repository and view the `setup.sh` to verify the new code was pushed to your repository.
 1. Close the codespace web browser tab.
+1. Edit the .devcontainer/devcontainer.json file.
+1. Update the "postCreateCommand" section as follows:
+
+   ```shell
+   "postCreateCommand": "./setup.sh"
+   ```
+     
 1. Click the **Create codespace on main** button.
 
    > Wait about **2 minutes** for the codespace to spin itself up.
