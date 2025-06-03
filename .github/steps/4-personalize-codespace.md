@@ -1,9 +1,3 @@
-<!--
-  <<< Author notes: Step 4 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
--->
-
 ## Step 4: Personalize your codespace!
 
 _Nicely done customizing your codespace!_ :partying_face:
@@ -46,6 +40,7 @@ Let's see how this works!
    sudo apt-get update
    sudo apt-get install sl
    echo "export PATH=\$PATH:/usr/games" >> ~/.bashrc
+   echo "export PATH=\$PATH:/usr/games" >> ~/.zshrc
    ```
 
 1. Save the file.
@@ -54,7 +49,7 @@ Let's see how this works!
 
    ```shell
    git add setup.sh --chmod=+x
-   git commit -m "Adding setup.sh from the codespace!"
+   git commit -m 'Adding setup.sh from the codespace!'
    ```
 
 1. Push the changes back to your repository. From the VS Code terminal, enter:
@@ -78,4 +73,11 @@ Let's see how this works!
    ```
 
 1. Enjoy the show!
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+
+1. With the `postCreateCommand` committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
+
+1. (optional) You created several codespaces during this exercise. Feel free to remove them.
+
+   > 💡 **Tip:** If you don't delete them, GitHub will automatically remove them after 30 days of inactivity.
+
+1. (optional) You set your default configuration to install dot files from this exercise repository. We recommend disabling that.

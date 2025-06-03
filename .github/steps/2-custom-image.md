@@ -1,9 +1,3 @@
-<!--
-  <<< Author notes: Step 2 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
--->
-
 ## Step 2: Add a custom image to your codespace!
 
 _Nice work! :tada: You created your first codespace and pushed code using VS Code!_
@@ -21,7 +15,7 @@ Let's add a `devcontainer.json` file and add a custom image.
 1. Navigating back to your **Code** tab of your repository, click the **Add file** drop-down button, and then click `Create new file`.
 1. Type or paste the following in the empty text field prompt to name your file.
 
-   ```
+   ```txt
    .devcontainer/devcontainer.json
    ```
 
@@ -43,7 +37,10 @@ Let's add a `devcontainer.json` file and add a custom image.
 1. Create a new codespace by navigating back to the **Code** tab of your repository.
 1. Click the green **Code** button located in the middle of the page.
 1. Click the **Codespaces** tab on the box that pops up.
-1. Click the **Create codespace on main** button OR click the `+` sign on the tab. This will create a new codespace on the main branch. (Notice your other codespace listed here.)
+
+   > Notice that our recently codespace is listed.
+
+1. Click the `+` sign on the tab to start another one which is now using our configuration file.
 
    > Wait about **2 minutes** for the codespace to spin itself up.
 
@@ -51,4 +48,4 @@ Let's add a `devcontainer.json` file and add a custom image.
 
    Note the image being used is the default image provided for GitHub Codespaces. It includes runtimes and tools for Python, Node.js, Docker, and more. See the full list here: https://aka.ms/ghcs-default-image. Your development team can use any custom image that has the necessary prerequisites installed. For more information, see [codespace image](https://aka.ms/configure-codespace).
 
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+1. With our dev container configuration committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
