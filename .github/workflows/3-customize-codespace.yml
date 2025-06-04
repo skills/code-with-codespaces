@@ -47,6 +47,16 @@ jobs:
 
       # START: Check practical exercise
 
+      - name: Check features set
+        id: check-features-set
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: .devcontainer/devcontainer.json
+          keyphrase: "features"
+          case-sensitive: false
+          minimum-occurrences: 1
+
       - name: Check customizations set
         id: check-customizations-set
         continue-on-error: true
@@ -67,6 +77,16 @@ jobs:
           case-sensitive: false
           minimum-occurrences: 1
 
+      - name: Check postCreate script
+        id: check-postcreate-script
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: .devcontainer/postCreate.sh
+          keyphrase: "install sl"
+          case-sensitive: false
+          minimum-occurrences: 1
+
       - name: Build message - step results
         id: build-message-step-results
         uses: skills/action-text-variables@v2
@@ -76,10 +96,14 @@ jobs:
             step_number: 3
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
+              - description: "Features added to devcontainer.json"
+                passed: ${{ steps.check-features-set.outcome == 'success' }}
               - description: "Customizations added to devcontainer.json"
                 passed: ${{ steps.check-customizations-set.outcome == 'success' }}
               - description: "Postcreate command added to devcontainer.json"
                 passed: ${{ steps.check-command-set.outcome == 'success' }}
+              - description: "Postcreate script created"
+                passed: ${{ steps.check-postcreate-script.outcome == 'success' }}
 
       - name: Create comment - step results
         run: |

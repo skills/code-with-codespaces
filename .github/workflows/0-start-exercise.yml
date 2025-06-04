@@ -21,7 +21,7 @@ jobs:
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.5.0
     with:
       exercise-title: "Code with Codespaces"
-      intro-message: "Define and work on your project in preconfigured development environment."
+      intro-message: "Let's create a pre-configured environment to simplify development!"
 
   post_next_step_content:
     name: Post next step content

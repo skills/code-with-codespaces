@@ -1,11 +1,8 @@
 name: Step 4
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "setup.sh"
+  issue_comment:
+    types: [created]
 
 permissions:
   contents: write
@@ -13,9 +10,30 @@ permissions:
   issues: write
 
 env:
+  # Keywords required in the issue comment to allow this workflow to run
+  REQUIRED_ISSUE_COMMENT_KEYWORDS: "@professortocat,Codespace"
   REVIEW_FILE: ".github/steps/x-review.md"
 
 jobs:
+  required_issue_comment_keywords:
+    name: Check issue comment text for required keywords
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Stop early if missing the expected keywords, case insensitive
+        shell: bash
+        run: |
+          required_keywords=(${REQUIRED_ISSUE_COMMENT_KEYWORDS//,/ })
+          comment_body_lower=$(echo "$COMMENT_BODY" | tr '[:upper:]' '[:lower:]')
+          for keyword in "${required_keywords[@]}"; do
+            keyword_lower=$(echo "$keyword" | tr '[:upper:]' '[:lower:]')
+            if [[ ! "$comment_body_lower" =~ $keyword_lower ]]; then
+              exit 1
+            fi
+          done
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+
   find_exercise:
     name: Find Exercise Issue
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.5.0
@@ -23,7 +41,7 @@ jobs:
   check_step_work:
     name: Check step work
     runs-on: ubuntu-latest
-    needs: [find_exercise]
+    needs: [find_exercise, required_issue_comment_keywords]
     env:
       ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
 

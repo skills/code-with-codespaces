@@ -1,83 +1,39 @@
-## Step 4: Personalize your codespace!
+## Step 4: Test out our Codespace
 
-_Nicely done customizing your codespace!_ :partying_face:
+The final test of our Codespace is to put ourselves in the position of an onboarding developer. Let's close everything and start up a new Codespace from nothing.
 
-When using any development environment, customizing the settings and tools to your preferences and workflows is an important step. GitHub Codespaces offers two main ways of personalizing your codespace: `Settings Sync` with VS Code and `dotfiles`.
+### ⌨️ Activity: Delete the existing codespace
 
-`Dotfiles` will be the focus of this activity.
+1. Close the window running your VS Code Codespace.
 
-**What are `dotfiles`?** Dotfiles are files and folders on Unix-like systems starting with . that control the configuration of applications and shells on your system. You can store and manage your dotfiles in a repository on GitHub.
+1. Navigate to your exercise repository.
 
-Let's see how this works!
+1. Above the files list on the right, click the green **<> Code** button.
 
-### :keyboard: Activity: Enable a `dotfile` for your codespace
+1. Select the **Codespaces** tab to show the list of created Codespaces.
 
-1. Start from the landing page of your repository.
-1. In the upper-right corner of any page, click your profile photo, and then click **Settings**.
-1. In the **Code, planning, and automation** section of the sidebar, click **Codespaces**.
-1. Under **Dotfiles**, select **Automatically install dotfiles** so that GitHub Codespaces automatically installs your dotfiles into every new codespace you create.
-1. Click **Select repository** and then choose your current skills working repository as the repository from which to install dotfiles.
+1. Find the active entry, select the three dot menu `...`, and select the **Delete** command.
 
-### :keyboard: Activity: Add a `dotfile` to your repository and run your codespace
+> [!TIP]
+> You can manage all of your Codespaces across all projects at https://github.com/codespaces
 
-1. Start from the landing page of your repository.
-1. Click the **Code** button located in the middle of the page.
-1. Click the **Codespaces** tab on the box that pops up.
-1. Click the **Create codespace on main** button.
+### ⌨️ Activity: Start a codespace
 
-   > Wait about **2 minutes** for the codespace to spin itself up.
+1. Above the files list on the right, click the green **<> Code** button.
 
-1. Verify your codespace is running. The browser should contain a VS Code web-based editor and a terminal should be present such as the below:
+1. Select the **Codespaces** tab and to show the configuration page.
 
-   ![codespace1](https://user-images.githubusercontent.com/26442605/207355196-71aab43f-35a9-495b-bcfe-bf3773c2f1b3.png)
+   > Alternately you select the three dot menu `...` to select a different machine type, location, or configuration.
 
-1. From inside the codespace in the VS Code explorer window, create a new file `setup.sh`.
-1. Enter the following code into the file:
+1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
 
-   ```bash
-   #!/bin/bash
+1. Test out some of the activities from the previous steps to see if they still work!
 
-   sudo apt-get update
-   sudo apt-get install sl
-   echo "export PATH=\$PATH:/usr/games" >> ~/.bashrc
-   echo "export PATH=\$PATH:/usr/games" >> ~/.zshrc
+1. Add an issue comment to let Mona know you have finished this activity, then give her a moment to share the final review.
+
+   ```md
+   Hey @professortocat, I've finished testing out my new Codespace.
+   I'm ready to review!
    ```
 
-1. Save the file.
-   > **Note**: The file should autosave.
-1. Commit the file changes. From the VS Code terminal enter:
-
-   ```shell
-   git add setup.sh --chmod=+x
-   git commit -m 'Adding setup.sh from the codespace!'
-   ```
-
-1. Push the changes back to your repository. From the VS Code terminal, enter:
-
-   ```shell
-   git push
-   ```
-
-1. Switch back to the homepage of your repository and view the `setup.sh` to verify the new code was pushed to your repository.
-1. Close the codespace web browser tab.
-1. Click the **Create codespace on main** button.
-
-   > Wait about **2 minutes** for the codespace to spin itself up.
-
-1. Verify your codespace is running, as you did previously.
-1. Verify the `setup.sh` file is present in your VS Code editor.
-1. From the VS Code terminal, type or paste:
-
-   ```shell
-   sl
-   ```
-
-1. Enjoy the show!
-
-1. With the `postCreateCommand` committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
-
-1. (optional) You created several codespaces during this exercise. Feel free to remove them.
-
-   > 💡 **Tip:** If you don't delete them, GitHub will automatically remove them after 30 days of inactivity.
-
-1. (optional) You set your default configuration to install dot files from this exercise repository. We recommend disabling that.
+1. Nice work! You are all done! 🎉

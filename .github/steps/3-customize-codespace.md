@@ -1,71 +1,136 @@
-## Step 3: Customize your codespace!
+## Step 3: Add Features
 
-_Nice work! :tada: You created a codespace with a custom image!_
+You can further customize your codespace by adding feature layers, VS Code extensions, VS Code settings, host requirements, and much more.
 
-You can customize your codespace by adding VS code extensions, adding features, setting host requirements, and much more.
+Let's add the GitHub CLI, extensions to run the python program using VS Code, and a custom script to install some packages when first creating the Codespace.
 
-Let's customize some settings in the `devcontainer.json` file!
+[understanding the codespace lifecycle](https://docs.github.com/en/codespaces/getting-started/understanding-the-codespace-lifecycle)
 
-### :keyboard: Activity: Add customizations to the `devcontainer` file
+### ⌨️ Activity: Add the GitHub CLI
 
-1. Navigate to the `.devcontainer/devcontainer.json` file.
-1. Add the following customizations to the body of the file before the last `}`.
+1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and run the below command.
 
-   ```jsonc
-    ,
-    // Add the IDs of extensions you want installed when the container is created.
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "GitHub.copilot"
-            ]
-        },
-        "codespaces": {
-            "openFiles": [
-                "codespace.md"
-            ]
-        }
-    }
+   ```txt
+   CodeSpaces: Add Dev Container Configuration Files...
    ```
 
-1. Click **Commit changes** and then select **Commit changes directly to the `main` branch**.
-1. Create a new codespace by navigating to the landing page of your repository.
-1. Click the **Code** button located in the middle of the page.
-1. Click the **Codespaces** tab on the box that pops up.
-1. Ensure the number of active codespaces does not reach the maximum (typically 2). For more information, see [understanding the codespace lifecycle](https://docs.github.com/en/codespaces/getting-started/understanding-the-codespace-lifecycle).
+1. Select the option `Modify Active Configuration...`.
 
-   > **Tip**: To stop an active codespace, click the **•••** next to **<span>&#x25cf;</span>Active** and select **Stop codespace** from the menu.
+1. In the list of features, search for and select `GitHub CLI`. Accept the default options.
 
-1. Click the **Create codespace on main** button.
+1. Navigate to and open the `.devcontainer/devcontainer.json` file.
 
-   > Wait about **2 minutes** for the codespace to spin itself up.
+1. Verify a new entry similar to the below was added.
 
-1. Verify your codespace is running, as you did previously.
-1. The `codespace.md` file should show up in the VS Code editor.
-1. The `copilot` extension should show up in the VS Code extension list.
-
-   This will add a VS Code extension as well as open a file on start up of the codespace.
-
-Next lets add some code to run upon creation of the codespace!
-
-### :keyboard: Activity: Execute code upon creation of the codespace
-
-1. Edit the `.devcontainer/devcontainer.json` file.
-1. Add the following postCreateCommand to the body of the file before the last `}`.
-
-   ```jsonc
-    ,
-    "postCreateCommand": "echo '# Writing code upon codespace creation!'  >> codespace.md"
+   ```json
+   "features": {
+      "ghcr.io/devcontainers/features/github-cli:1": {}
+   },
    ```
 
-1. Click **Commit changes** and then select **Commit changes directly to the `main` branch**.
-1. Create a new codespace by navigating to the landing page of your repository.
-1. Click the **Code** button located in the middle of the page.
-1. Click the **Codespaces** tab on the box that pops up.
-1. Click the **Create codespace on main** button.
+### ⌨️ Activity: Add VS Code extensions
 
-   > Wait about **2 minutes** for the codespace to spin itself up.
+1. In the left navigation, select the **Extension** tab.
 
-1. Verify your codespace is running, as you did previously.
-1. Verify the `codespace.md` file now has the text `Writing code upon codespace creation!`.
+1. Search for `python` and find the below entries.
+
+1. Right click on each entry and select the `Add to devcontainer.json` option.
+
+1. Navigate to and open the `.devcontainer/devcontainer.json` file.
+
+1. Verify a new entry similar to the below was added.
+
+   ```json
+   "customizations": {
+      "vscode": {
+         "extensions": [
+            "ms-python.python",
+            "ms-python.debugpy"
+         ]
+      }
+   },
+   ```
+
+### ⌨️ Activity: Add a custom script
+
+The Dev Container specification provides multiple locations to run [life cycle](https://containers.dev/implementors/json_reference/#lifecycle-scripts) scripts to further customize your Codespace.
+
+Let's add the `postCreateCommand` which runs one time after initial build (or rebuild).
+
+1. Use the VS Code file explorer to create a script file with the below name.
+
+   ```txt
+   .devcontainer/postCreate.sh
+   ```
+
+   Alternately, run the below terminal command to create it.
+
+   ```bash
+   mkdir -p .devcontainer
+   echo "" > .devcontainer/postCreate.sh
+   ```
+
+1. Open the `.devcontainer/postCreate.sh` file and add the following code, which will install an animation of a steam locomotive.
+
+   ```bash
+   #!/bin/bash
+
+   sudo apt-get update
+   sudo apt-get install sl
+   echo "export PATH=\$PATH:/usr/games" >> ~/.bashrc
+   echo "export PATH=\$PATH:/usr/games" >> ~/.zshrc
+   ```
+
+1. Navigate to and open the `.devcontainer/devcontainer.json` file.
+
+1. Add the below entry to call the script.
+
+   ```json
+   "postCreateCommand": "bash .devcontainer/postCreate.sh"
+   ```
+
+1. Run the below command to allow running the script as an executable, and pushing the changes.
+
+   ```shell
+   git add '.devcontainer/postCreate.sh' --chmod=+x
+   git add '.devcontainer/devcontainer.json'
+   git commit -m 'feat: Add postCreate script'
+   git push
+   ```
+
+1. Open the VS Code Command Palette (`CTRL`+`Shift`+`P`) and run the command `Codespaces: Rebuild Container` with a normal "not full" rebuild.
+
+1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
+
 1. With the customizations committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
+
+> [!TIP]
+> You can also configure your account to [install dotfiles](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account), allowing you to combine personal configurations with the project's configuration.
+
+### ⌨️ Activity: (optional) Verify our customizations
+
+Let's verify our python extension, github CLI, and custom script were installed correctly in the Codespace.
+
+1. Ensure you are in VS Code (Codespace).
+
+1. In the left sidebar, click the extensions tab and verify that the Python extensions are installed and enabled.
+
+   <img width="350" alt="python extension for VS Code" src="https://github.com/user-attachments/assets/3040c0f5-1658-47e2-a439-20504a384f77" />
+
+1. In the left sidebar, select **Run and Debug** tab and then press the **Start Debugging** icon. VS Code will open the lower panel and switch to the **DEBUG CONSOLE** tab to show the run logs.
+
+   <img alt="run and debug tab pointing to start button" src="" width="350"/>
+
+1. In the lower panel, switch to the **TERMINAL** tab.
+
+1. Run the following command to show the version of the installed GitHub CLI.
+
+   ```bash
+   gh --version
+   ```
+
+1. Run the following command to show the steam locomotive animation.
+
+   ```bash
+   sl
+   ```

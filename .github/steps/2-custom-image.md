@@ -1,51 +1,63 @@
-## Step 2: Add a custom image to your codespace!
+## Step 2: Use a custom image in your codespace
 
-_Nice work! :tada: You created your first codespace and pushed code using VS Code!_
+The codespace we just created didn't specify any configuration, so GitHub used a default image. While this is very useful, it won't be consistent and it doesn't version lock our runtime environment. Specifying the configuration is important to keep the development environment repeatable.
 
-You can configure the development container for a repository so that any codespace created for that repository will give you a tailored development environment, complete with all the tools and runtimes you need to work on a specific project.
+Let's do that now by providing a specific docker container image.
 
-**What are development containers?** Development containers, or dev containers, are Docker containers that are specifically configured to provide a fully featured development environment. Whenever you work in a codespace, you are using a dev container on a virtual machine.
+### How to configure a Codespace?
 
-A dev container file is a JSON file that lets you customize the default image that runs your codespace, VS code settings, run custom code, forward ports and much more!
+Configuration is provided directly in the repository via the `.devcontainer/devcontainer.json`. You can even add multiple configurations!
 
-Let's add a `devcontainer.json` file and add a custom image.
+Let's create this file and set a few of the most common settings. For other options like setting configuring VS Code, forwarding ports, and running lifetime scripts, see the [Codespaces documentation](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces) on GitHub.
 
-### :keyboard: Activity: Add a .devcontainer.json file to customize your codespace
+### ⌨️ Activity: Customize the codespace
 
-1. Navigating back to your **Code** tab of your repository, click the **Add file** drop-down button, and then click `Create new file`.
-1. Type or paste the following in the empty text field prompt to name your file.
+1. Switch back to the VS Code Codespace.
+
+1. Use the VS Code file explorer to create the below file.
 
    ```txt
    .devcontainer/devcontainer.json
    ```
 
-1. In the body of the new **.devcontainer/devcontainer.json** file, add the following content:
+   Alternately, run the below terminal command to create it.
 
-   ```jsonc
+   ```bash
+   mkdir -p .devcontainer
+   echo "" > .devcontainer/devcontainer.json
+   ```
+
+1. Open the `.devcontainer/devcontainer.json` file and add the following content.
+
+   ```json
    {
-     // Name this configuration
-     "name": "Codespace for Skills!",
-     // Use the base codespace image
-     "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
-
-     "remoteUser": "codespace",
-     "overrideCommand": false
+     "name": "Python 3.12",
+     "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12"
    }
    ```
 
-1. Click **Commit changes** and then select **Commit changes directly to the `main` branch**.
-1. Create a new codespace by navigating back to the **Code** tab of your repository.
-1. Click the green **Code** button located in the middle of the page.
-1. Click the **Codespaces** tab on the box that pops up.
+   > 💡 **Tip**: The name is optional but it will help identify the configuration when creating a codespace on GitHub, if there are multiple options.
 
-   > Notice that our recently codespace is listed.
+1. After saving, VS Code likely popped up a notification that it detected a configuration change. You can **Accept** that option to rebuild the development container or manually use the Command Palette (`CTRL`+`Shift`+`P`) and run the command `Codespaces: Rebuild Container` with a normal "not full" rebuild.
 
-1. Click the `+` sign on the tab to start another one which is now using our configuration file.
+1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
 
-   > Wait about **2 minutes** for the codespace to spin itself up.
+1. Expand the lower panel and select the **TERMINAL** tab.
 
-1. Verify that your new codespace is running, as you did previously.
+1. Paste the following command to view the installed version of Python.
 
-   Note the image being used is the default image provided for GitHub Codespaces. It includes runtimes and tools for Python, Node.js, Docker, and more. See the full list here: https://aka.ms/ghcs-default-image. Your development team can use any custom image that has the necessary prerequisites installed. For more information, see [codespace image](https://aka.ms/configure-codespace).
+   ```bash
+   python --version
+   ```
+
+   > Notice it is different from the previous step, `3.12` instead of `3.13`.
+
+1. With our new configuration verified, let's commit the changes. Use VS Code's source control tools or the below terminal command.
+
+   ```bash
+   git add '.devcontainer/devcontainer.json'
+   git commit -m 'feat: Add codespace configuration'
+   git push
+   ```
 
 1. With our dev container configuration committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.

@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "index.html"
 
 permissions:
   contents: write
@@ -52,8 +50,8 @@ jobs:
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
-          text-file: index.html
-          keyphrase: "Hello from the codespace"
+          text-file: src/hello.py
+          keyphrase: "Hello World"
           case-sensitive: false
           minimum-occurrences: 1
 
@@ -66,7 +64,7 @@ jobs:
             step_number: 1
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "Hello message updated in index.html"
+              - description: "Hello message fixed in hello.py"
                 passed: ${{ steps.check-hello-message.outcome == 'success' }}
 
       - name: Create comment - step results
