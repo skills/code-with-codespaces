@@ -14,7 +14,32 @@ env:
   STEP_2_FILE: ".github/steps/2-custom-image.md"
 
 jobs:
+  check_commits_count:
+    name: Check commits count
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main'
+
+    outputs:
+      total_commits: ${{ steps.get_commit_counts.outputs.total_commits }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+
+      - name: Get commit count
+        id: get_commit_counts
+        run: |
+          total_commits=$(git rev-list --all --count)
+          echo "Total commits in the repository: $total_commits"
+          echo "total_commits=$total_commits" >> $GITHUB_OUTPUT
+
   find_exercise:
+    needs: [check_commits_count]
+    if: needs.check_commits_count.outputs.total_commits > 1
     name: Find Exercise Issue
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.5.0
 
