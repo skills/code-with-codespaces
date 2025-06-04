@@ -39,7 +39,7 @@ jobs:
       - name: Update comment - checking work
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body-file exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+            --body-file exercise-toolkit/markdown-templates/step-feedback/checking-work.md \
             --edit-last
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
