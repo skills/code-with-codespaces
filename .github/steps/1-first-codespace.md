@@ -6,23 +6,24 @@ A **codespace** is a development environment hosted in the cloud, defined by con
 
 Each codespace follows the [Dev Container specification](https://containers.dev/implementors/spec/) and is hosted by GitHub as a [Docker container](https://code.visualstudio.com/docs/devcontainers/containers).
 
+But don't worry! You don't need to know Docker or even have it installed on your machine!
+
 > [!TIP]
 > Since the Dev Container configuration is part of the repository, you can also use it locally with your own Docker host. Nice!
 
 A Codespace has several advantages/features compared to local development. To name a few:
 
 - Start a codespace directly from the repository page.
-- Use different hardware configurations.
 - Develop in the browser. No IDE installation required.
-- Use a local install of VS Code to link to the remote Codespace.
-- Add "feature layers" to the base image to install common development needs.
-- Apply VS Code settings specific to the project.
-- Run scripts at various steps of the codespace lifestyle.
-- Use custom images to customize anything Docker can customize.
+  - Option to use a local install of VS Code to link to the remote Codespace.
+- Preconfigure everything you need to run the project:
+  - Add **[features](https://containers.dev/features)** to install common development needs.
+  - Run scripts at various steps of the codespace lifecycle _(e.g install python/npm packages)_.
+  - Setup VS Code settings and extensions to match the project needs.
 - Fast internet access (since the container is in the datacenter).
 
 > [!TIP]
-> Codespaces are even useful in short-lived situations like reviewing a pull request. No need to verify you have the right setup to test out their code changes.
+> Codespaces are even useful in short-lived situations like reviewing a pull request. No need to verify you have the right setup to test out the incoming code changes.
 
 Let's get started! We'll start up a Codespace, run the application, make a change, and push it. Like normal development! 🤓
 
