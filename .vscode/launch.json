@@ -1,11 +1,11 @@
 {
-  "version": "0.2.0",
   "configurations": [
     {
       "name": "Launch Python",
       "type": "debugpy",
       "request": "launch",
-      "args": ["src/hello.py"]
+      "program": "src/hello.py",
+      "console": "integratedTerminal"
     }
   ]
 }
