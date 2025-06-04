@@ -32,13 +32,15 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
 
 1. Above the files list on the right, click the green **<> Code** button.
 
+   <img width="300" alt="green code button" src="https://github.com/user-attachments/assets/a9d80b0d-4614-4b26-83dd-b4b6fefd76c9" />
+
 1. Select the **Codespaces** tab and click the **Create codespace on main** button. A new window will open running VS Code and it will connect to the remote Codespace.
 
    > Wait a few minutes for the codespace to be created.
 
 1. Look in the bottom left of the VS Code window see the remote connection.
 
-   <img alt="remote connection status in VS Code" src="" width="350"/>
+   <img width="350" alt="remote connection status in VS Code" src="https://github.com/user-attachments/assets/35fa3230-db51-4a9d-a82b-3a1184e2e9a0"/>
 
 > [!TIP]
 > GitHub uses the [universal](https://github.com/devcontainers/images/tree/main/src/universal) Codespace image if the repository doesn't include a configuration. It includes several useful and commonly used tools.
@@ -49,7 +51,12 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
 
 1. In the left sidebar, select the file **Explorer** tab and open the file `src/hello.py`.
 
+   <img width="250" alt="vs code explorer tab" src="https://github.com/user-attachments/assets/76af1f05-1fed-43ff-b362-43d1c6c6cc53" />
+
 1. In the lower panel, select the **TERMINAL** tab.
+
+   <img width="350" alt="vs code terminal tab" src="https://github.com/user-attachments/assets/9bb493b6-167c-4414-8f39-ab9c4baa5514" />
+
 
 1. Paste the following command in the Codespace's remote terminal to show the installed version of Python. Note the version for comparison later.
 
