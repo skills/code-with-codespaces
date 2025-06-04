@@ -12,7 +12,11 @@ The final test of our Codespace is to put ourselves in the position of an onboar
 
 1. Select the **Codespaces** tab to show the list of created Codespaces.
 
+   <img width="250" alt="list of codespaces" src="https://github.com/user-attachments/assets/2ed90b91-0c62-4c49-96f5-75abbb34a989" />
+
 1. Find the active entry, select the three dot menu `...`, and select the **Delete** command.
+
+   <img width="500" alt="delete codespace command" src="https://github.com/user-attachments/assets/911a62a5-c50f-497b-a853-6e3865886211" />
 
 > [!TIP]
 > You can manage all of your Codespaces across all projects at https://github.com/codespaces
