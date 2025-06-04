@@ -14,9 +14,13 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
    CodeSpaces: Add Dev Container Configuration Files...
    ```
 
+   <img width="350" alt="vs code configure dev container command" src="https://github.com/user-attachments/assets/38265419-47bf-4ac8-a0fd-71ea67e2d6eb" />
+
 1. Select the option `Modify Active Configuration...`.
 
 1. In the list of features, search for and select `GitHub CLI`. Accept the default options.
+
+   <img width="350" alt="select the github cli feature" src="https://github.com/user-attachments/assets/483b53ef-908d-4160-81e6-28fb977423a4" />
 
 1. Navigate to and open the `.devcontainer/devcontainer.json` file.
 
@@ -32,9 +36,15 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
 1. In the left navigation, select the **Extension** tab.
 
-1. Search for `python` and find the below entries.
+   <img width="200" alt="vs code extensions tab" src="https://github.com/user-attachments/assets/d7941711-e5a9-4871-83f3-c723c203bc70" />
+
+1. Search for `python` and find entries for `Python` and `Python Debugger`.
+
+   <img width="250" alt="python extensions for vs code" src="https://github.com/user-attachments/assets/b34ef808-2023-41f2-8963-85ba04d5684b" />
 
 1. Right click on each entry and select the `Add to devcontainer.json` option.
+
+   <img width="250" alt="add to devcontainer config button" src="https://github.com/user-attachments/assets/30ada390-c8a7-4175-9d83-dfa17fc83de3" />
 
 1. Navigate to and open the `.devcontainer/devcontainer.json` file.
 
@@ -100,6 +110,8 @@ Let's add the `postCreateCommand` which runs one time after initial build (or re
 
 1. Open the VS Code Command Palette (`CTRL`+`Shift`+`P`) and run the command `Codespaces: Rebuild Container` with a normal "not full" rebuild.
 
+   <img width="350" alt="rebuild codespace command" src="https://github.com/user-attachments/assets/2b72e1a7-68c4-4c8d-8bf1-5727a520fd0e"/>
+
 1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
 
 1. With the customizations committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
@@ -115,11 +127,11 @@ Let's verify our python extension, github CLI, and custom script were installed 
 
 1. In the left sidebar, click the extensions tab and verify that the Python extensions are installed and enabled.
 
-   <img width="350" alt="python extension for VS Code" src="https://github.com/user-attachments/assets/3040c0f5-1658-47e2-a439-20504a384f77" />
+   <img width="250" alt="python extensions for vs code" src="https://github.com/user-attachments/assets/b34ef808-2023-41f2-8963-85ba04d5684b" />
 
 1. In the left sidebar, select **Run and Debug** tab and then press the **Start Debugging** icon. VS Code will open the lower panel and switch to the **DEBUG CONSOLE** tab to show the run logs.
 
-   <img alt="run and debug tab pointing to start button" src="" width="350"/>
+   <img width="250" alt="run and debug tab pointing to start button" src="https://github.com/user-attachments/assets/63327b56-b033-4ca1-aa83-93ec076389f5"/>
 
 1. In the lower panel, switch to the **TERMINAL** tab.
 
