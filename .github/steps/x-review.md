@@ -18,6 +18,6 @@ Here's a recap of all the tasks you've accomplished in your repository:
 
 ### What's next?
 
-- [Learn another GitHub skill](https://github.com/skills).
+- [Take another GitHub Skill exercise](https://github.com/skills).
 - [Read the Get started with GitHub docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).

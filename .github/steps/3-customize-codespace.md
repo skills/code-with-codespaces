@@ -11,14 +11,14 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and select the below command.
 
    ```txt
-   CodeSpaces: Add Dev Container Configuration Files...
+   Codespaces: Add Dev Container Configuration Files...
    ```
 
    <img width="350" alt="vs code configure dev container command" src="https://github.com/user-attachments/assets/38265419-47bf-4ac8-a0fd-71ea67e2d6eb" />
 
-1. Select the option `Modify Active Configuration...`.
+1. Select the option `Modify your active configuration...`.
 
-1. In the list of features, search for and select `GitHub CLI`. Accept the default options.
+1. In the list of features, search for and select `GitHub CLI`. Check the checkbox and accept the default options.
 
    <img width="350" alt="select the github cli feature" src="https://github.com/user-attachments/assets/483b53ef-908d-4160-81e6-28fb977423a4" />
 
@@ -74,8 +74,7 @@ The Dev Container specification provides multiple locations to run [lifecycle](h
    Alternately, run the below terminal command to create it.
 
    ```bash
-   mkdir -p .devcontainer
-   echo "" > .devcontainer/postCreate.sh
+   touch .devcontainer/postCreate.sh
    ```
 
 1. Open the `.devcontainer/postCreate.sh` file and add the following code, which will install an animation of a steam locomotive.
@@ -96,6 +95,8 @@ The Dev Container specification provides multiple locations to run [lifecycle](h
    ```json
    "postCreateCommand": "bash .devcontainer/postCreate.sh"
    ```
+
+   Ensure it is added at the same level (_top level_) as `image`, `features`, and `customizations`.
 
 1. With our new configuration finished, let's commit the changes. Use VS Code's source control tools or the below terminal command.
 
@@ -119,9 +120,9 @@ The Dev Container specification provides multiple locations to run [lifecycle](h
 
 ### ⌨️ Activity: (optional) Verify our customizations
 
-Let's verify our python extension, github CLI, and custom script were installed correctly in the Codespace.
+Now that you've rebuilt the codespace, let's verify the python extension, GitHub CLI, and custom script were installed correctly in the Codespace.
 
-1. Ensure you are in VS Code (Codespace).
+1. Ensure you are in the Codespace.
 
 1. In the left sidebar, click the extensions tab and verify that the Python extensions are installed and enabled.
 

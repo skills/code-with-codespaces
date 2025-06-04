@@ -8,7 +8,7 @@ on:
       - ".devcontainer/devcontainer.json"
 
 permissions:
-  contents: write
+  contents: read
   actions: write
   issues: write
 
@@ -42,6 +42,7 @@ jobs:
         run: |
           gh issue comment "$ISSUE_URL" \
             --body-file exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+            --edit-last
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

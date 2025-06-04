@@ -58,7 +58,6 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
 
    <img width="350" alt="vs code terminal tab" src="https://github.com/user-attachments/assets/9bb493b6-167c-4414-8f39-ab9c4baa5514" />
 
-
 1. Paste the following command in the Codespace's remote terminal to show the installed version of Python. Note the version for comparison later.
 
    ```bash
@@ -71,23 +70,15 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
    python src/hello.py
    ```
 
-   Example response:
-
-   ```bash
-   Hello!
-   ```
-
 ### ⌨️ Activity: Push changes to your repository from the codespace
 
-1. If necessary, open the `src/hello.py` file.
-
-1. Replace the `Hello!` text with the following and save the file.
+1. Replace the `src/hello.py` file contents with the following and save the file.
 
    ```py
    print("Hello World!")
    ```
 
-1. With the message updated, commit the change and push it to GitHub. Use VS Code's source control tools or the below terminal command.
+1. With the message updated, commit the change and push it to GitHub. Use VS Code's source control tools or the below terminal commands.
 
    ```bash
    git add 'src/hello.py'

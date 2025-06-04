@@ -8,7 +8,7 @@ on:
       - ".devcontainer/devcontainer.json"
 
 permissions:
-  contents: write
+  contents: read
   actions: write
   issues: write
 
@@ -42,6 +42,7 @@ jobs:
         run: |
           gh issue comment "$ISSUE_URL" \
             --body-file exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+            --edit-last
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -53,7 +54,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: .devcontainer/devcontainer.json
-          keyphrase: "devcontainers/python:3.12"
+          keyphrase: "devcontainers/python:3.10"
           case-sensitive: false
           minimum-occurrences: 1
 
@@ -66,7 +67,7 @@ jobs:
             step_number: 2
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "Devcontainer image set to python:3.12"
+              - description: "Devcontainer image set to python:3.10"
                 passed: ${{ steps.check-container-image.outcome == 'success' }}
 
       - name: Create comment - step results

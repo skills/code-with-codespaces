@@ -10,31 +10,30 @@ permissions:
   issues: write
 
 env:
-  # Keywords required in the issue comment to allow this workflow to run
-  REQUIRED_ISSUE_COMMENT_KEYWORDS: "@professortocat,Codespace"
   REVIEW_FILE: ".github/steps/x-review.md"
 
 jobs:
   required_issue_comment_keywords:
-    name: Check issue comment text for required keywords
+    name: Check issue comment text for required keyword
     runs-on: ubuntu-latest
-
     steps:
-      - name: Stop early if missing the expected keywords, case insensitive
-        shell: bash
-        run: |
-          required_keywords=(${REQUIRED_ISSUE_COMMENT_KEYWORDS//,/ })
-          comment_body_lower=$(echo "$COMMENT_BODY" | tr '[:upper:]' '[:lower:]')
-          for keyword in "${required_keywords[@]}"; do
-            keyword_lower=$(echo "$keyword" | tr '[:upper:]' '[:lower:]')
-            if [[ ! "$comment_body_lower" =~ $keyword_lower ]]; then
-              exit 1
-            fi
-          done
-        env:
-          COMMENT_BODY: ${{ github.event.comment.body }}
+      - name: Check for professortocat reference
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text: ${{ github.event.comment.body }}
+          keyphrase: 'professortocat'
+          case-sensitive: false
+          minimum-occurrences: 1
+      - name: Check for codespace reference
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text: ${{ github.event.comment.body }}
+          keyphrase: 'codespace'
+          case-sensitive: false
+          minimum-occurrences: 1
 
   find_exercise:
+    needs: [required_issue_comment_keywords]
     name: Find Exercise Issue
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.5.0
 

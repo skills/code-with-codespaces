@@ -1,6 +1,6 @@
 ## Step 2: Use a custom image in your codespace
 
-The codespace we just created didn't specify any configuration, so GitHub used a default image. While this is very useful, it won't be consistent and it doesn't version lock our runtime environment. Specifying the configuration is important to keep the development environment repeatable.
+The didn't specify any configuration for the codespace we just created, so GitHub used a default Docker image. While this is very useful, it won't be consistent and it doesn't version lock our runtime environment. Specifying the configuration is important to keep the development environment repeatable.
 
 Let's do that now by providing a specific docker container image.
 
@@ -8,13 +8,13 @@ Let's do that now by providing a specific docker container image.
 
 Configuration is provided directly in the repository via the `.devcontainer/devcontainer.json`. You can even add multiple configurations!
 
-Let's create this file and set a few of the most common settings. For other options like setting configuring VS Code, forwarding ports, and running lifetime scripts, see the [Codespaces documentation](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces) on GitHub.
+Let's create this file and set a few of the most common settings. For other options like setting configuring VS Code, forwarding ports, and running lifecycle scripts, see the [Codespaces documentation](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces) on GitHub.
 
 ### ⌨️ Activity: Customize the codespace
 
 1. Ensure you are in the VS Code Codespace.
 
-1. Use the VS Code file explorer to create the below file.
+1. Use the VS Code file explorer to create the configuration file.
 
    ```txt
    .devcontainer/devcontainer.json
@@ -23,16 +23,15 @@ Let's create this file and set a few of the most common settings. For other opti
    Alternately, run the below terminal command to create it.
 
    ```bash
-   mkdir -p .devcontainer
-   echo "" > .devcontainer/devcontainer.json
+   mkdir -p .devcontainer && touch .devcontainer/devcontainer.json
    ```
 
 1. Open the `.devcontainer/devcontainer.json` file and add the following content.
 
    ```json
    {
-     "name": "Python 3.12",
-     "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12"
+     "name": "Python 3.10",
+     "image": "mcr.microsoft.com/vscode/devcontainers/python:3.10"
    }
    ```
 
@@ -52,7 +51,7 @@ Let's create this file and set a few of the most common settings. For other opti
    python --version
    ```
 
-   > Notice it is different from the previous step, `3.12` instead of `3.13`.
+   > Notice it is different from the previous step.
 
 1. With our new configuration verified, let's commit the changes. Use VS Code's source control tools or the below terminal command.
 
