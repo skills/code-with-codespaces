@@ -25,11 +25,11 @@ The final test of our Codespace is to put ourselves in the position of an onboar
 
 1. Above the files list on the right, click the green **<> Code** button.
 
-1. Select the **Codespaces** tab and click the plus sign `+` or **Create codespace on main** button.
+1. Select the **Codespaces** tab and click the **plus sign** `+` or **Create codespace on main** button.
 
    > Alternately you can select the three dot menu `...` to choose a different machine type, location, or configuration.
 
-1. Wait a few minutes for the Codespace be created and VS Code to connect.
+1. Wait a few minutes for the Codespace to be created and VS Code to connect.
 
 1. (optional) Test out some of the activities from the previous steps to see if they still work!
 

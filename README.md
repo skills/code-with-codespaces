@@ -4,20 +4,19 @@ _Develop your project with a pre-configured development environment using Codesp
 
 ## Welcome
 
-GitHub Codespaces is a development environment that's hosted in the cloud.
+GitHub Codespaces is a development environment that is hosted in the cloud.
 
 - **Who this is for**: Developers, DevOps Engineers, Engineering Managers, Product Managers.
-- **What you'll learn**: How to create a codespace, push code from a codespace, select a custom image, and customize a codespace.
-- **What you'll build**: A codespace with devcontainer.json files, customizations, and personalizations.
-- **Prerequisites**: If you need to learn about Visual Studio Code, read [Visual Studio Code Docs](https://code.visualstudio.com/docs) first.
-- **How long**: This course can be completed in less than an hour.
+- **What you'll learn**: How to create, configure, and use a codespace.
+- **What you'll build**: A codespace configuration with customizations tailored to a repository.
+- **Prerequisites**: Familiar with [Visual Studio Code Docs](https://code.visualstudio.com/docs).
+- **How long**: This exercise can be completed in less than an hour.
 
-In this course, you will:
+In this exercise, you will:
 
-1. Create your first codespace
-2. Add a custom image
-3. Customize your codespace
-4. Personalize your codespace
+1. Create your first codespace and change some code
+1. Customize your codespace
+1. Practice using the codespace
 
 ### How to start this exercise
 

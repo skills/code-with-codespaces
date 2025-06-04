@@ -8,7 +8,7 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
 ### ⌨️ Activity: Add the GitHub CLI
 
-1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and run the below command.
+1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and select the below command.
 
    ```txt
    CodeSpaces: Add Dev Container Configuration Files...
@@ -63,9 +63,7 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
 ### ⌨️ Activity: Add a custom script
 
-The Dev Container specification provides multiple locations to run [lifecycle](https://containers.dev/implementors/json_reference/#lifecycle-scripts) scripts to further customize your Codespace.
-
-Let's add the `postCreateCommand` which runs one time after initial build (or rebuild).
+The Dev Container specification provides multiple locations to run [lifecycle](https://containers.dev/implementors/json_reference/#lifecycle-scripts) scripts to further customize your Codespace. Let's add the `postCreateCommand` which runs one time after initial build (or rebuild).
 
 1. Use the VS Code file explorer to create a script file with the below name.
 
@@ -129,7 +127,7 @@ Let's verify our python extension, github CLI, and custom script were installed 
 
    <img width="250" alt="python extensions for vs code" src="https://github.com/user-attachments/assets/b34ef808-2023-41f2-8963-85ba04d5684b" />
 
-1. In the left sidebar, select **Run and Debug** tab and then press the **Start Debugging** icon. VS Code will open the lower panel and switch to the **DEBUG CONSOLE** tab to show the run logs.
+1. In the left sidebar, select **Run and Debug** tab and then press the **Start Debugging** icon. VS Code will open the lower panel and show the run logs.
 
    <img width="250" alt="run and debug tab pointing to start button" src="https://github.com/user-attachments/assets/63327b56-b033-4ca1-aa83-93ec076389f5"/>
 
