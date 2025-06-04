@@ -13,7 +13,7 @@ permissions:
   issues: write
 
 env:
-  STEP_4_FILE: ".github/steps/4-personalize-codespace.md"
+  STEP_4_FILE: ".github/steps/4-use-codespace.md"
 
 jobs:
   find_exercise:
