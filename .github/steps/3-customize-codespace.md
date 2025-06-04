@@ -1,6 +1,6 @@
 ## Step 3: Add Features
 
-You can further customize your codespace by adding feature layers, VS Code extensions, VS Code settings, host requirements, and much more.
+You can further customize your codespace by adding container feature, VS Code extensions, VS Code settings, host requirements, and much more.
 
 Let's add the GitHub CLI, extensions to run the python program using VS Code, and a custom script to install some packages when first creating the Codespace.
 
@@ -63,7 +63,7 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
 ### ⌨️ Activity: Add a custom script
 
-The Dev Container specification provides multiple locations to run [life cycle](https://containers.dev/implementors/json_reference/#lifecycle-scripts) scripts to further customize your Codespace.
+The Dev Container specification provides multiple locations to run [lifecycle](https://containers.dev/implementors/json_reference/#lifecycle-scripts) scripts to further customize your Codespace.
 
 Let's add the `postCreateCommand` which runs one time after initial build (or rebuild).
 
@@ -99,12 +99,12 @@ Let's add the `postCreateCommand` which runs one time after initial build (or re
    "postCreateCommand": "bash .devcontainer/postCreate.sh"
    ```
 
-1. Run the below command to allow running the script as an executable, and pushing the changes.
+1. With our new configuration finished, let's commit the changes. Use VS Code's source control tools or the below terminal command.
 
    ```shell
-   git add '.devcontainer/postCreate.sh' --chmod=+x
    git add '.devcontainer/devcontainer.json'
-   git commit -m 'feat: Add postCreate script'
+   git add '.devcontainer/postCreate.sh'
+   git commit -m 'feat: Add features, extensions, and postCreate script'
    git push
    ```
 

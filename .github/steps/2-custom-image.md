@@ -12,7 +12,7 @@ Let's create this file and set a few of the most common settings. For other opti
 
 ### ⌨️ Activity: Customize the codespace
 
-1. Switch back to the VS Code Codespace.
+1. Ensure you are in the VS Code Codespace.
 
 1. Use the VS Code file explorer to create the below file.
 

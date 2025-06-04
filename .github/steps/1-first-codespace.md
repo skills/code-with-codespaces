@@ -7,7 +7,7 @@ A **codespace** is a development environment hosted in the cloud, defined by con
 Each codespace follows the [Dev Container specification](https://containers.dev/implementors/spec/) and is hosted by GitHub as a [Docker container](https://code.visualstudio.com/docs/devcontainers/containers).
 
 > [!TIP]
-> Since the Dev Container configuration is part of the repository, you can also use it locally with your on Docker host. Nice!
+> Since the Dev Container configuration is part of the repository, you can also use it locally with your own Docker host. Nice!
 
 A Codespace has several advantages/features compared to local development. To name a few:
 
@@ -94,6 +94,6 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
    git push
    ```
 
-1. Back in your web browser, open the `src/hello.py` file to to verify the change was updated.
+1. (optional) Back in your web browser, open the `src/hello.py` file to to verify the change was updated.
 
 1. With the the change pushed to GitHub, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
