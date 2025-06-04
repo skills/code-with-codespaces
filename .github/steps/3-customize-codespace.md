@@ -4,8 +4,6 @@ You can further customize your codespace by adding container feature, VS Code ex
 
 Let's add the GitHub CLI, extensions to run the python program using VS Code, and a custom script to install some packages when first creating the Codespace.
 
-[understanding the codespace lifecycle](https://docs.github.com/en/codespaces/getting-started/understanding-the-codespace-lifecycle)
-
 ### ⌨️ Activity: Add the GitHub CLI
 
 1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and select the below command.
@@ -63,7 +61,7 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
 ### ⌨️ Activity: Add a custom script
 
-The Dev Container specification provides multiple locations to run [lifecycle](https://containers.dev/implementors/json_reference/#lifecycle-scripts) scripts to further customize your Codespace. Let's add the `postCreateCommand` which runs one time after initial build (or rebuild).
+The Dev Container specification provides multiple locations to run [lifecycle scripts](https://containers.dev/implementors/json_reference/#lifecycle-scripts) to further customize your Codespace. Let's add the `postCreateCommand` which runs one time after initial build (or rebuild).
 
 1. Use the VS Code file explorer to create a script file with the below name.
 
@@ -90,13 +88,11 @@ The Dev Container specification provides multiple locations to run [lifecycle](h
 
 1. Navigate to and open the `.devcontainer/devcontainer.json` file.
 
-1. Add the below entry to call the script.
+1. Create the `postCreateCommand` entry at the same level (_top level_) as `features`, and `customizations`.
 
    ```json
    "postCreateCommand": "bash .devcontainer/postCreate.sh"
    ```
-
-   Ensure it is added at the same level (_top level_) as `image`, `features`, and `customizations`.
 
 1. With our new configuration finished, let's commit the changes. Use VS Code's source control tools or the below terminal command.
 
@@ -107,7 +103,7 @@ The Dev Container specification provides multiple locations to run [lifecycle](h
    git push
    ```
 
-1. Open the VS Code Command Palette (`CTRL`+`Shift`+`P`) and run the command `Codespaces: Rebuild Container` with a normal "not full" rebuild.
+1. Open the VS Code Command Palette (`CTRL`+`Shift`+`P`) and run the `Codespaces: Rebuild Container` command. Select the **Rebuild** option. A full build is not necessary.
 
    <img width="350" alt="rebuild codespace command" src="https://github.com/user-attachments/assets/2b72e1a7-68c4-4c8d-8bf1-5727a520fd0e"/>
 

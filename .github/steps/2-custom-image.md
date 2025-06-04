@@ -23,7 +23,8 @@ Let's create this file and set a few of the most common settings. For other opti
    Alternately, run the below terminal command to create it.
 
    ```bash
-   mkdir -p .devcontainer && touch .devcontainer/devcontainer.json
+   mkdir -p .devcontainer
+   touch .devcontainer/devcontainer.json
    ```
 
 1. Open the `.devcontainer/devcontainer.json` file and add the following content.
