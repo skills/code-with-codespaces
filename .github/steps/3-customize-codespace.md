@@ -4,7 +4,7 @@ You can further customize your codespace by adding container feature, VS Code ex
 
 Let's add the GitHub CLI, extensions to run the python program using VS Code, and a custom script to install some packages when first creating the Codespace.
 
-### ⌨️ Activity: Add the GitHub CLI
+### ⌨️ Activity: Override the Python Version
 
 1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and select the below command.
 
