@@ -35,9 +35,7 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
 
    <img width="300" alt="green code button" src="https://github.com/user-attachments/assets/a9d80b0d-4614-4b26-83dd-b4b6fefd76c9" />
 
-1. Select the **Codespaces** tab and click the **Create codespace on main** button. A new window will open running VS Code and it will connect to the remote Codespace.
-
-   > Wait a few minutes for the codespace to be created.
+1. Select the **Codespaces** tab and click the **Create codespace on main** button. A new window will open running VS Code and it will connect to the remote Codespace. Wait a few minutes for the codespace to be created.
 
 1. Look in the bottom left of the VS Code window see the remote connection.
 
@@ -58,10 +56,13 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
 
    <img width="350" alt="vs code terminal tab" src="https://github.com/user-attachments/assets/9bb493b6-167c-4414-8f39-ab9c4baa5514" />
 
-1. Paste the following command in the Codespace's remote terminal to show the installed version of Python. Note the version for comparison later.
+1. Paste the following command in the Codespace's remote terminal to show the installed versions of several tools. Note the versions for comparison later.
 
    ```bash
+   node --version
+   dotnet --version
    python --version
+   gh --version
    ```
 
 1. Paste the following command to run the Python program in the Codespace's remote terminal.

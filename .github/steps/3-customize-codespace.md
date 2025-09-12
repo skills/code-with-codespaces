@@ -16,9 +16,9 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
 1. Select the option `Modify your active configuration...`.
 
-1. In the list of features, search for and select `GitHub CLI`. Check the checkbox and accept the default options.
+1. In the list of features, search for and select `Python`. Instead of the defaults, pick `Configure Options`. When it asks for he Python version, select `3.10`.
 
-   <img width="350" alt="select the github cli feature" src="https://github.com/user-attachments/assets/483b53ef-908d-4160-81e6-28fb977423a4" />
+   <!-- <img width="350" alt="select the github cli feature" src="https://github.com/user-attachments/assets/483b53ef-908d-4160-81e6-28fb977423a4" /> -->
 
 1. Navigate to and open the `.devcontainer/devcontainer.json` file.
 
@@ -26,7 +26,10 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
    ```json
    "features": {
-      "ghcr.io/devcontainers/features/github-cli:1": {}
+      "ghcr.io/devcontainers/features/python:1": {
+         "installTools": true,
+         "version": "3.10"
+      }
    },
    ```
 
@@ -116,7 +119,7 @@ The Dev Container specification provides multiple locations to run [lifecycle sc
 
 ### ⌨️ Activity: (optional) Verify our customizations
 
-Now that you've rebuilt the codespace, let's verify the python extension, GitHub CLI, and custom script were installed correctly in the Codespace.
+Now that you've rebuilt the codespace, let's verify the python extension, python version, and custom script were adjusted correctly in the Codespace.
 
 1. Ensure you are in the Codespace.
 
@@ -130,11 +133,16 @@ Now that you've rebuilt the codespace, let's verify the python extension, GitHub
 
 1. In the lower panel, switch to the **TERMINAL** tab.
 
-1. Run the following command to show the version of the installed GitHub CLI.
+1. Run the following command to show the version of the installed GitHub CLI and Python
 
    ```bash
+   node --version
+   dotnet --version
+   python --version
    gh --version
    ```
+
+   > Notice the Python version is different but the others are the same. Adding the feature overwrote the version provided by the universal image.
 
 1. Run the following command to show the steam locomotive animation.
 

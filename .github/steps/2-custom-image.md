@@ -27,12 +27,12 @@ Let's create this file and set a few of the most common settings. For other opti
    touch .devcontainer/devcontainer.json
    ```
 
-1. Open the `.devcontainer/devcontainer.json` file and add the following content.
+1. Open the `.devcontainer/devcontainer.json` file and add the following content. Let's start with the default image.
 
    ```json
    {
-     "name": "Python 3.10",
-     "image": "mcr.microsoft.com/vscode/devcontainers/python:3.10"
+     "name": "Universal - Latest",
+     "image": "mcr.microsoft.com/devcontainers/universal:latest"
    }
    ```
 
@@ -46,13 +46,14 @@ Let's create this file and set a few of the most common settings. For other opti
 
 1. Expand the lower panel and select the **TERMINAL** tab.
 
-1. Paste the following command to view the installed version of Python.
+1. Paste the following command to view the versions of several tools. Notice they are the same from the previous step.
 
    ```bash
+   node --version
+   dotnet --version
    python --version
+   gh --version
    ```
-
-   > Notice it is different from the previous step.
 
 1. With our new configuration verified, let's commit the changes. Use VS Code's source control tools or the below terminal command.
 
