@@ -54,7 +54,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: .devcontainer/devcontainer.json
-          keyphrase: "devcontainers/universal:latest"
+          keyphrase: "devcontainers/base:debian"
           case-sensitive: false
           minimum-occurrences: 1
 
@@ -67,7 +67,7 @@ jobs:
             step_number: 2
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "Devcontainer image set to universal:latest"
+              - description: "Devcontainer image set to base:debian"
                 passed: ${{ steps.check-container-image.outcome == 'success' }}
 
       - name: Create comment - step results

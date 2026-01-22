@@ -4,7 +4,7 @@ You can further customize your codespace by adding container feature, VS Code ex
 
 Let's add the GitHub CLI, extensions to run the python program using VS Code, and a custom script to install some packages when first creating the Codespace.
 
-### ⌨️ Activity: Override the Python Version
+### ⌨️ Activity: Add support for the Python
 
 1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and select the below command.
 
@@ -16,9 +16,11 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
 1. Select the option `Modify your active configuration...`.
 
-1. In the list of features, search for and select `Python`. Instead of the defaults, pick `Configure Options`. When it asks for he Python version, select `3.10`.
+1. In the list of features, search for and select `Python` from `devcontainers`.
 
-   <!-- <img width="350" alt="select the github cli feature" src="https://github.com/user-attachments/assets/483b53ef-908d-4160-81e6-28fb977423a4" /> -->
+   - Instead of the defaults, pick `Configure Options`.
+   - Leave `Install Tools` set to `true`.
+   - Select Python version: `3.10`
 
 1. Navigate to and open the `.devcontainer/devcontainer.json` file.
 
@@ -78,6 +80,12 @@ The Dev Container specification provides multiple locations to run [lifecycle sc
    touch .devcontainer/postCreate.sh
    ```
 
+1. Make the script executable by running the below terminal command.
+
+   ```bash
+   chmod +x .devcontainer/postCreate.sh
+   ```
+
 1. Open the `.devcontainer/postCreate.sh` file and add the following code, which will install an animation of a steam locomotive.
 
    ```bash
@@ -94,7 +102,7 @@ The Dev Container specification provides multiple locations to run [lifecycle sc
 1. Create the `postCreateCommand` entry at the same level (_top level_) as `features`, and `customizations`.
 
    ```json
-   "postCreateCommand": "bash .devcontainer/postCreate.sh"
+   "postCreateCommand": ".devcontainer/postCreate.sh"
    ```
 
 1. With our new configuration finished, let's commit the changes. Use VS Code's source control tools or the below terminal command.
@@ -133,7 +141,7 @@ Now that you've rebuilt the codespace, let's verify the python extension, python
 
 1. In the lower panel, switch to the **TERMINAL** tab.
 
-1. Run the following command to show the version of the installed GitHub CLI and Python
+1. Run the following command to show the installed version of Python. Notice the others are not installed.
 
    ```bash
    node --version
@@ -141,8 +149,6 @@ Now that you've rebuilt the codespace, let's verify the python extension, python
    python --version
    gh --version
    ```
-
-   > Notice the Python version is different but the others are the same. Adding the feature overwrote the version provided by the universal image.
 
 1. Run the following command to show the steam locomotive animation.
 

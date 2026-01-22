@@ -27,12 +27,12 @@ Let's create this file and set a few of the most common settings. For other opti
    touch .devcontainer/devcontainer.json
    ```
 
-1. Open the `.devcontainer/devcontainer.json` file and add the following content. Let's start with the default image.
+1. Open the `.devcontainer/devcontainer.json` file and add the following content. Let's start with a basic image.
 
    ```json
    {
-     "name": "Universal - Latest",
-     "image": "mcr.microsoft.com/devcontainers/universal:latest"
+     "name": "Basic Dev Environment",
+     "image": "mcr.microsoft.com/vscode/devcontainers/base:debian"
    }
    ```
 
@@ -46,13 +46,22 @@ Let's create this file and set a few of the most common settings. For other opti
 
 1. Expand the lower panel and select the **TERMINAL** tab.
 
-1. Paste the following command to view the versions of several tools. Notice they are the same from the previous step.
+1. Use the following command to check the tool versions again. Notice that none are installed now!
 
    ```bash
    node --version
    dotnet --version
    python --version
    gh --version
+   ```
+
+1. ⚠️ There is currently a bug with Codespaces that expects [Git-LFS](https://git-lfs.com/) to be installed. Run the following command to remove the affected Git hooks.
+
+   ```bash
+   rm .git/hooks/post-checkout
+   rm .git/hooks/post-commit
+   rm .git/hooks/post-merge
+   rm .git/hooks/pre-push
    ```
 
 1. With our new configuration verified, let's commit the changes. Use VS Code's source control tools or the below terminal command.
