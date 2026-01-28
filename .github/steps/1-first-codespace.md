@@ -1,64 +1,92 @@
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
+## Step 1: Start a codespace and push some code
 
-## Step 1: Create your first codespace and push code
+### What's the big deal about Codespaces?
 
-_Welcome to "Develop code using GitHub Codespaces and Visual Studio Code"! :wave:_
+A **codespace** is a development environment hosted in the cloud, defined by configuration files in your repository. This creates a repeatable development environment tailored specifically to the project that simplifies developer onboarding and avoids the famous phrase "It works on my machine!" 😎
 
-**What's the big deal about using a codespace for software development?** A codespace is a development environment that's hosted in the cloud. You can customize your project for GitHub Codespaces by committing configuration files to your repository (also known as configuration-as-code), which creates a repeatable codespace configuration for all users of your project. Each codespace you create is hosted by GitHub in a Docker container that runs on a virtual machine. You can choose the type of machine you want to use depending on the resources you need.
+Each codespace follows the [Dev Container specification](https://containers.dev/implementors/spec/) and is hosted by GitHub as a [Docker container](https://code.visualstudio.com/docs/devcontainers/containers).
 
-GitHub offers a range of features to help your development team customize a codespace to reach peak configuration and performance needs. For example, you can:
+But don't worry! You don't need to know Docker or even have it installed on your machine!
 
-- Create a codespace from your repository.
-- Push code from the codespace to your repository.
-- Use VS Code to develop code.
-- Customize the codespace with custom images.
-- Manage the codespace.
+> [!TIP]
+> Since the Dev Container configuration is part of the repository, you can also use it locally with your own Docker host. Nice!
 
-To begin developing using GitHub Codespaces, you can create a codespace from a template or from any branch or commit in a repository. When you create a codespace from a template, you can start from a blank template or choose a template suitable for the work you're doing.
+A Codespace has several advantages/features compared to local development. To name a few:
 
-### :keyboard: Activity: Start a codespace
+- Start a codespace directly from the repository page.
+- Develop in the browser. No IDE installation required.
+  - Option to use a local install of VS Code to link to the remote Codespace.
+- Preconfigure everything you need to run the project:
+  - Add **[features](https://containers.dev/features)** to install common development needs.
+  - Run scripts at various steps of the codespace lifecycle _(e.g install python/npm packages)_.
+  - Setup VS Code settings and extensions to match the project needs.
+- Fast internet access (since the container is in the datacenter).
 
-**We recommend opening another browser tab to work through the following activities so you can keep these instructions open for reference.**
+> [!TIP]
+> Codespaces are even useful in short-lived situations like reviewing a pull request. No need to verify you have the right setup to test out the incoming code changes.
 
-1. Start from the landing page of your repository.
-1. Click the green **Code** button located in the middle of the page.
-1. Select the **Codespaces** tab in the box that pops up and then click the **Create codespace on main** button.
+Let's get started! We'll start up a Codespace, run the application, make a change, and push it. Like normal development! 🤓
 
-   > Wait about 2 minutes for the codespace to spin itself up.
-   > **Note**: It's a virtual machine spinning up in the background.
+### ⌨️ Activity: Start a codespace
 
-1. Verify your codespace is running. The browser should contain a VS Code web-based editor and a terminal should be present such as the below:
-   ![codespace1](https://user-images.githubusercontent.com/26442605/207355196-71aab43f-35a9-495b-bcfe-bf3773c2f1b3.png)
+1. Open a second tab and navigate to this repository. Ensure you are on the **Code** tab.
 
-### :keyboard: Activity: Push code to your repository from the codespace
+1. Above the files list on the right, click the green **<> Code** button.
 
-1. From inside the codespace in the VS Code explorer window, select the `index.html` file.
-1. Replace the **h1** header with the below:
+   <img width="300" alt="green code button" src="https://github.com/user-attachments/assets/a9d80b0d-4614-4b26-83dd-b4b6fefd76c9" />
 
-   ```html
-   <h1>Hello from the codespace!</h1>
+1. Select the **Codespaces** tab and click the **Create codespace on main** button. A new window will open running VS Code and it will connect to the remote Codespace. Wait a few minutes for the codespace to be created.
+
+1. Look in the bottom left of the VS Code window see the remote connection.
+
+   <img width="350" alt="remote connection status in VS Code" src="https://github.com/user-attachments/assets/35fa3230-db51-4a9d-a82b-3a1184e2e9a0"/>
+
+> [!TIP]
+> GitHub uses the [universal](https://github.com/devcontainers/images/tree/main/src/universal) Codespace image if the repository doesn't include a configuration. It includes several useful and commonly used tools.
+
+### ⌨️ Activity: Run the application
+
+1. Ensure you are in the VS Code Codespace.
+
+1. In the left sidebar, select the file **Explorer** tab and open the file `src/hello.py`.
+
+   <img width="250" alt="vs code explorer tab" src="https://github.com/user-attachments/assets/76af1f05-1fed-43ff-b362-43d1c6c6cc53" />
+
+1. In the lower panel, select the **TERMINAL** tab.
+
+   <img width="350" alt="vs code terminal tab" src="https://github.com/user-attachments/assets/9bb493b6-167c-4414-8f39-ab9c4baa5514" />
+
+1. Paste the following command in the Codespace's remote terminal to show the installed versions of several tools. Note the versions for comparison later.
+
+   ```bash
+   node --version
+   dotnet --version
+   python --version
+   gh --version
    ```
 
-1. Save the file.
-   > **Note**: The file should autosave.
-1. Use the VS Code terminal to commit the file change by entering the following commit message:
+1. Paste the following command to run the Python program in the Codespace's remote terminal.
 
-   ```shell
-   git commit -a -m "Adding hello from the codespace!"
+   ```bash
+   python src/hello.py
    ```
 
-1. Push the changes back to your repository. From the VS Code terminal, enter:
+### ⌨️ Activity: Push changes to your repository from the codespace
 
-   ```shell
+1. Replace the `src/hello.py` file contents with the following and save the file.
+
+   ```py
+   print("Hello World!")
+   ```
+
+1. With the message updated, commit the change and push it to GitHub. Use VS Code's source control tools or the below terminal commands.
+
+   ```bash
+   git add 'src/hello.py'
+   git commit -m 'fix: incomplete hello message'
    git push
    ```
 
-1. Your code has been pushed to your repository!
-1. Switch back to the homepage of your repository and view the `index.html` to verify the new code was pushed to your repository.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+1. (optional) Back in your web browser, open the `src/hello.py` file to to verify the change was updated.
+
+1. With the the change pushed to GitHub, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.

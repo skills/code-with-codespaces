@@ -1,20 +1,12 @@
-<!--
-  <<< Author notes: Finish >>>
-  Review what we learned, ask for feedback, provide next steps.
--->
-
-## Finish
-
-_Congratulations friend, you've completed this course!_
+## Review
 
 <img src="https://octodex.github.com/images/welcometocat.png" alt=celebrate width=300 align=right>
 
 Here's a recap of all the tasks you've accomplished in your repository:
 
 - You learned how to create a codespace and push code to your repository from the codespace.
-- You learned how to use custom images in your codespace.
-- You learned how to customize your codespace.
-- You learned how to personalize your codespace.
+- You learned how to use custom images, features, extensions, and scripts in your codespace.
+- You learned how to test run it like an onboarding developer.
 
 ### Additional learning and resources
 
@@ -26,8 +18,6 @@ Here's a recap of all the tasks you've accomplished in your repository:
 
 ### What's next?
 
-- Learn more about securing your supply chain by reading: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview).
-- [We'd love to hear what you thought of this course](https://github.com/orgs/skills/discussions/categories/code-with-codespaces).
-- [Learn another GitHub skill](https://github.com/skills).
+- [Take another GitHub Skill exercise](https://github.com/skills).
 - [Read the Get started with GitHub docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).

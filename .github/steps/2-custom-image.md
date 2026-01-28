@@ -1,54 +1,75 @@
-<!--
-  <<< Author notes: Step 2 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
--->
+## Step 2: Use a custom image in your codespace
 
-## Step 2: Add a custom image to your codespace!
+The didn't specify any configuration for the codespace we just created, so GitHub used a default Docker image. While this is very useful, it won't be consistent and it doesn't version lock our runtime environment. Specifying the configuration is important to keep the development environment repeatable.
 
-_Nice work! :tada: You created your first codespace and pushed code using VS Code!_
+Let's do that now by providing a specific docker container image.
 
-You can configure the development container for a repository so that any codespace created for that repository will give you a tailored development environment, complete with all the tools and runtimes you need to work on a specific project.
+### How to configure a Codespace?
 
-**What are development containers?** Development containers, or dev containers, are Docker containers that are specifically configured to provide a fully featured development environment. Whenever you work in a codespace, you are using a dev container on a virtual machine.
+Configuration is provided directly in the repository via the `.devcontainer/devcontainer.json`. You can even add multiple configurations!
 
-A dev container file is a JSON file that lets you customize the default image that runs your codespace, VS code settings, run custom code, forward ports and much more!
+Let's create this file and set a few of the most common settings. For other options like setting configuring VS Code, forwarding ports, and running lifecycle scripts, see the [Codespaces documentation](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces) on GitHub.
 
-Let's add a `devcontainer.json` file and add a custom image.
+### ⌨️ Activity: Customize the codespace
 
-### :keyboard: Activity: Add a .devcontainer.json file to customize your codespace
+1. Ensure you are in the VS Code Codespace.
 
-1. Navigating back to your **Code** tab of your repository, click the **Add file** drop-down button, and then click `Create new file`.
-1. Type or paste the following in the empty text field prompt to name your file.
+1. Use the VS Code file explorer to create the configuration file.
 
-   ```
+   ```txt
    .devcontainer/devcontainer.json
    ```
 
-1. In the body of the new **.devcontainer/devcontainer.json** file, add the following content:
+   Alternately, run the below terminal command to create it.
 
-   ```jsonc
+   ```bash
+   mkdir -p .devcontainer
+   touch .devcontainer/devcontainer.json
+   ```
+
+1. Open the `.devcontainer/devcontainer.json` file and add the following content. Let's start with a basic image.
+
+   ```json
    {
-     // Name this configuration
-     "name": "Codespace for Skills!",
-     // Use the base codespace image
-     "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
-
-     "remoteUser": "codespace",
-     "overrideCommand": false
+     "name": "Basic Dev Environment",
+     "image": "mcr.microsoft.com/vscode/devcontainers/base:debian"
    }
    ```
 
-1. Click **Commit changes** and then select **Commit changes directly to the `main` branch**.
-1. Create a new codespace by navigating back to the **Code** tab of your repository.
-1. Click the green **Code** button located in the middle of the page.
-1. Click the **Codespaces** tab on the box that pops up.
-1. Click the **Create codespace on main** button OR click the `+` sign on the tab. This will create a new codespace on the main branch. (Notice your other codespace listed here.)
+   > 💡 **Tip**: The name is optional but it will help identify the configuration when creating a codespace on GitHub, if there are multiple options.
 
-   > Wait about **2 minutes** for the codespace to spin itself up.
+1. After saving, VS Code likely popped up a notification that it detected a configuration change. You can **Accept** that option to rebuild the development container or manually use the Command Palette (`CTRL`+`Shift`+`P`) and run the command `Codespaces: Rebuild Container`. Select the **Rebuild** option. A full build is not necessary.
 
-1. Verify that your new codespace is running, as you did previously.
+   <img width="350" alt="rebuild codespace command" src="https://github.com/user-attachments/assets/2b72e1a7-68c4-4c8d-8bf1-5727a520fd0e"/>
 
-   Note the image being used is the default image provided for GitHub Codespaces. It includes runtimes and tools for Python, Node.js, Docker, and more. See the full list here: https://aka.ms/ghcs-default-image. Your development team can use any custom image that has the necessary prerequisites installed. For more information, see [codespace image](https://aka.ms/configure-codespace).
+1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
 
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+1. Expand the lower panel and select the **TERMINAL** tab.
+
+1. Use the following command to check the tool versions again. Notice that none are installed now!
+
+   ```bash
+   node --version
+   dotnet --version
+   python --version
+   gh --version
+   ```
+
+1. ⚠️ There is currently a bug with Codespaces that expects [Git-LFS](https://git-lfs.com/) to be installed. Run the following command to remove the affected Git hooks.
+
+   ```bash
+   rm .git/hooks/post-checkout
+   rm .git/hooks/post-commit
+   rm .git/hooks/post-merge
+   rm .git/hooks/pre-push
+   ```
+
+1. With our new configuration verified, let's commit the changes. Use VS Code's source control tools or the below terminal command.
+
+   ```bash
+   git add '.devcontainer/devcontainer.json'
+   git commit -m 'feat: Add codespace configuration'
+   git push
+   ```
+
+1. With our dev container configuration committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.

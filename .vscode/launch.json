@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "name": "Launch Python",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "src/hello.py",
+      "console": "integratedTerminal"
+    }
+  ]
+}
