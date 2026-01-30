@@ -12,7 +12,7 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
    Codespaces: Add Dev Container Configuration Files...
    ```
 
-   <img width="350" alt="vs code configure dev container command" src="../images/configure-dev-container-command.png" />
+   <img width="350" alt="vs code configure dev container command" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/configure-dev-container-command.png" />
 
 1. Select the option `Modify your active configuration...`.
 
@@ -39,15 +39,15 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
 1. In the left navigation, select the **Extension** tab.
 
-   <img width="200" alt="vs code extensions tab" src="../images/vscode-extensions-tab.png" />
+   <img width="200" alt="vs code extensions tab" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/vscode-extensions-tab.png" />
 
 1. Search for `python` and find entries for `Python` and `Python Debugger`.
 
-   <img width="250" alt="python extensions for vs code" src="../images/python-extensions.png" />
+   <img width="250" alt="python extensions for vs code" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/python-extensions.png" />
 
 1. Right click on each entry and select the `Add to devcontainer.json` option.
 
-   <img width="250" alt="add to devcontainer config button" src="../images/add-to-devcontainer-button.png" />
+   <img width="250" alt="add to devcontainer config button" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/add-to-devcontainer-button.png" />
 
 1. Navigate to and open the `.devcontainer/devcontainer.json` file.
 
@@ -116,7 +116,7 @@ The Dev Container specification provides multiple locations to run [lifecycle sc
 
 1. Open the VS Code Command Palette (`CTRL`+`Shift`+`P`) and run the `Codespaces: Rebuild Container` command. Select the **Rebuild** option. A full build is not necessary.
 
-   <img width="350" alt="rebuild codespace command" src="../images/rebuild-codespace-command.png"/>
+   <img width="350" alt="rebuild codespace command" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/rebuild-codespace-command.png"/>
 
 1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
 
@@ -133,11 +133,11 @@ Now that you've rebuilt the codespace, let's verify the python extension, python
 
 1. In the left sidebar, click the extensions tab and verify that the Python extensions are installed and enabled.
 
-   <img width="250" alt="python extensions for vs code" src="../images/python-extensions.png" />
+   <img width="250" alt="python extensions for vs code" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/python-extensions.png" />
 
 1. In the left sidebar, select **Run and Debug** tab and then press the **Start Debugging** icon. VS Code will open the lower panel and show the run logs.
 
-   <img width="250" alt="run and debug tab pointing to start button" src="../images/run-and-debug-tab.png"/>
+   <img width="250" alt="run and debug tab pointing to start button" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/run-and-debug-tab.png"/>
 
 1. In the lower panel, switch to the **TERMINAL** tab.
 

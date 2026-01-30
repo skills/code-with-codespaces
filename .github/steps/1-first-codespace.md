@@ -33,13 +33,13 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
 
 1. Above the files list on the right, click the green **<> Code** button.
 
-   <img width="300" alt="green code button" src="../images/green-code-button.png" />
+   <img width="300" alt="green code button" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/refs/heads/main/.github/images/green-code-button.png" />
 
 1. Select the **Codespaces** tab and click the **Create codespace on main** button. A new window will open running VS Code and it will connect to the remote Codespace. Wait a few minutes for the codespace to be created.
 
 1. Look in the bottom left of the VS Code window see the remote connection.
 
-   <img width="350" alt="remote connection status in VS Code" src="../images/remote-connection-status.png"/>
+   <img width="350" alt="remote connection status in VS Code" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/remote-connection-status.png"/>
 
 > [!TIP]
 > GitHub uses the [universal](https://github.com/devcontainers/images/tree/main/src/universal) Codespace image if the repository doesn't include a configuration. It includes several useful and commonly used tools.
@@ -50,11 +50,11 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
 
 1. In the left sidebar, select the file **Explorer** tab and open the file `src/hello.py`.
 
-   <img width="250" alt="vs code explorer tab" src="../images/vscode-explorer-tab.png" />
+   <img width="250" alt="vs code explorer tab" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/vscode-explorer-tab.png" />
 
 1. In the lower panel, select the **TERMINAL** tab.
 
-   <img width="350" alt="vs code terminal tab" src="../images/vscode-terminal-tab.png" />
+   <img width="350" alt="vs code terminal tab" src="https://raw.githubusercontent.com/FidelusAleksander/code-with-codespaces/0e3bbe4318a6d94d473494d9251e57a2e7387986/.github/images/vscode-terminal-tab.png" />
 
 1. Paste the following command in the Codespace's remote terminal to show the installed versions of several tools. Note the versions for comparison later.
 
