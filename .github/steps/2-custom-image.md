@@ -32,7 +32,7 @@ Let's create this file and set a few of the most common settings. For other opti
    ```json
    {
      "name": "Basic Dev Environment",
-     "image": "mcr.microsoft.com/vscode/devcontainers/base:debian"
+     "image": "mcr.microsoft.com/devcontainers/base:debian"
    }
    ```
 
