@@ -1,0 +1,772 @@
+﻿<!DOCT<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relacionômetro - Medidor de Relacionamentos Saudáveis</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f8f9fa;
+            --green: #2ecc71;
+            --yellow: #f1c40f;
+            --red: #e74c3c;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        body {
+            background-color: #f0f2f5;
+            color: var(--dark);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+
+        main {
+            padding: 20px;
+            flex: 1;
+        }
+
+
+        .screen {
+            display: none;
+        }
+
+
+        .screen.active {
+            display: block;
+        }
+
+
+        /* Screen 1: Intro */
+        .intro-card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+        }
+
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+
+        .btn-sos {
+            background: var(--red);
+            margin-top: 15px;
+        }
+
+
+        /* Screen 2: Quiz */
+        .question-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+
+        .question-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+
+        .options {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        .option-btn {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+
+        .option-btn.selected {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+
+        /* Screen 3: Result */
+        .result-box {
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        .result-green { background: var(--green); }
+        .result-yellow { background: var(--yellow); color: var(--dark); }
+        .result-red { background: var(--red); }
+
+
+        .result-box h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+
+        .info-section {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+
+        .info-section h3 {
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.75rem;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="app-container">
+    <header>
+        <h1>Relacionômetro</h1>
+        <p>Medidor de Relacionamentos Saudáveis</p>
+    </header>
+
+
+    <main>
+        <!-- TELA 1: INÍCIO -->
+        <div id="screen-intro" class="screen active">
+            <div class="intro-card">
+                <h3>Bem-vinda(o)!</h3>
+                <p>Este teste interativo ajuda a identificar a dinâmica do seu relacionamento (namoro, casamento ou união estável), reconhecendo sinais de respeito ou comportamentos de controle e risco.</p>
+            </div>
+            <button class="btn" onclick="showScreen('screen-quiz')">Iniciar Avaliação</button>
+            <button class="btn btn-sos" onclick="showScreen('screen-sos')">Apoio & Emergência (Ligue 180)</button>
+        </div>
+
+
+        <!-- TELA 2: QUESTIONÁRIO -->
+        <div id="screen-quiz" class="screen">
+            <p style="margin-bottom: 15px; font-size: 0.85rem; color: #666;">Responda com sinceridade considerando a sua rotina:</p>
+            <form id="quiz-form">
+                <div class="question-card">
+                    <p class="question-title">1. Seu parceiro(a) respeita suas opiniões, decisões e momentos de privacidade?</p>
+                    <div class="options">
+                        <button type="button" class="option-btn" onclick="selectOption(1, 0, this)">Sempre</button>
+                        <button type="button" class="option-btn" onclick="selectOption(1, 1, this)">Às vezes</button>
+                        <button type="button" class="option-btn" onclick="selectOption(1, 2, this)">Raramente/Nunca</button>
+                    </div>
+                </div>
+
+
+                <div class="question-card">
+                    <p class="question-title">2. Há exigência para checar suas redes sociais, celular ou saber com quem você conversa?</p>
+                    <div class="options">
+                        <button type="button" class="option-btn" onclick="selectOption(2, 0, this)">Nunca</button>
+                        <button type="button" class="option-btn" onclick="selectOption(2, 1, this)">Às vezes</button>
+                        <button type="button" class="option-btn" onclick="selectOption(2, 2, this)">Frequentemente</button>
+                    </div>
+                </div>
+
+
+                <div class="question-card">
+                    <p class="question-title">3. Seu parceiro(a) tenta controlar suas roupas, rotina ou afasta você de amigos e familiares?</p>
+                    <div class="options">
+                        <button type="button" class="option-btn" onclick="selectOption(3, 0, this)">Nunca</button>
+                        <button type="button" class="option-btn" onclick="selectOption(3, 1, this)">Às vezes</button>
+                        <button type="button" class="option-btn" onclick="selectOption(3, 2, this)">Frequentemente</button>
+                    </div>
+                </div>
+
+
+                <div class="question-card">
+                    <p class="question-title">4. Você já sofreu ameaças, ofensas verbais, chantagem emocional ou agressão física/patrimonial?</p>
+                    <div class="options">
+                        <button type="button" class="option-btn" onclick="selectOption(4, 0, this)">Nunca</button>
+                        <button type="button" class="option-btn" onclick="selectOption(4, 2, this)">Sim, já ocorreu</button>
+                    </div>
+                </div>
+            </form>
+            <button class="btn" onclick="calculateResult()">Ver Resultado</button>
+        </div>
+
+
+        <!-- TELA 3: RESULTADO -->
+        <div id="screen-result" class="screen">
+            <div id="result-box" class="result-box">
+                <h2 id="result-title">Analisando...</h2>
+                <p id="result-desc"></p>
+            </div>
+
+
+            <div class="info-section">
+                <h3>Entenda os Tipos de Violência (Lei Maria da Penha)</h3>
+                <p><strong>Física:</strong> Qualquer conduta que ofenda a integridade corporal.</p><br>
+                <p><strong>Psicológica:</strong> Ameaças, humilhações, isolamento ou controle constante.</p><br>
+                <p><strong>Patrimonial/Moral:</strong> Retenção de documentos/dinheiro ou calúnia/injúria.</p>
+            </div>
+
+
+            <button class="btn" onclick="showScreen('screen-quiz')">Refazer Teste</button>
+            <button class="btn btn-sos" onclick="showScreen('screen-sos')">Ver Rede de Apoio</button>
+        </div>
+
+
+        <!-- TELA 4: REDE DE APOIO / SOS -->
+        <div id="screen-sos" class="screen">
+            <div class="info-section" style="border-left: 5px solid var(--red);">
+                <h3>Canais de Emergência</h3>
+                <p><strong>Central de Atendimento à Mulher:</strong> Ligue 180 (Gratuito e Anônimo)</p><br>
+                <p><strong>Polícia Militar (Emergência):</strong> Ligue 190</p>
+            </div>
+
+
+            <div class="info-section">
+                <h3>Atendimento Local em Porto Alegre</h3>
+                <p><strong>Delegacia da Mulher (DEACM):</strong> Atendimento especializado e medidas protetivas.</p><br>
+                <p><strong>CRAS / CREAS:</strong> Acompanhamento social e psicológico na rede pública.</p>
+            </div>
+
+
+            <button class="btn" onclick="showScreen('screen-intro')">Voltar ao Início</button>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>Projeto de Pesquisa - EMEB Dr. Liberato Salzano Vieira da Cunha (2026)</p>
+        <p>Tecnologia Social Preventiva de Baixo Custo</p>
+    </footer>
+</div>
+
+
+<script>
+    const answers = {};
+
+
+    function showScreen(screenId) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(screenId).classList.add('active');
+        window.scrollTo(0,0);
+    }
+
+
+    function selectOption(qNum, value, btn) {
+        answers[qNum] = value;
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+    }
+
+
+    function calculateResult() {
+        if (Object.keys(answers).length < 4) {
+            alert("Por favor, responda a todas as perguntas antes de continuar.");
+            return;
+        }
+
+
+        let totalScore = 0;
+        for (let key in answers) {
+            totalScore += answers[key];
+        }
+
+
+        const box = document.getElementById('result-box');
+        const title = document.getElementById('result-title');
+        const desc = document.getElementById('result-desc');
+
+
+        box.className = 'result-box ';
+
+
+        if (totalScore <= 1) {
+            box.classList.add('result-green');
+            title.innerText = "Zona Verde: Relacionamento Saudável";
+            desc.innerText = "Sua relação demonstra respeito, autonomia e diálogo equilibrado. Continue cultivando a parceria e a individualidade!";
+        } else if (totalScore <= 3) {
+            box.classList.add('result-yellow');
+            title.innerText = "Zona Amarela: Sinais de Alerta";
+            desc.innerText = "Atenção a comportamentos iniciais de ciúme, controle ou isolamento. Fique atenta(o) aos seus limites e busque diálogo.";
+        } else {
+            box.classList.add('result-red');
+            title.innerText = "Zona Vermelha: Ciclo de Abuso e Risco";
+            desc.innerText = "Alerta de comportamentos abusivos e violação de direitos! Busque orientação e apoio nos canais especializados.";
+        }
+
+
+        showScreen('screen-result');
+    }
+</script>
+
+
+</body>
+</html>
+YPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relacionômetro - Medidor de Relacionamentos Saudáveis</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f8f9fa;
+            --green: #2ecc71;
+            --yellow: #f1c40f;
+            --red: #e74c3c;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        body {
+            background-color: #f0f2f5;
+            color: var(--dark);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+
+        main {
+            padding: 20px;
+            flex: 1;
+        }
+
+
+        .screen {
+            display: none;
+        }
+
+
+        .screen.active {
+            display: block;
+        }
+
+
+        /* Screen 1: Intro */
+        .intro-card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+        }
+
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+
+        .btn-sos {
+            background: var(--red);
+            margin-top: 15px;
+        }
+
+
+        /* Screen 2: Quiz */
+        .question-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+
+        .question-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+
+        .options {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        .option-btn {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+
+        .option-btn.selected {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+
+        /* Screen 3: Result */
+        .result-box {
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        .result-green { background: var(--green); }
+        .result-yellow { background: var(--yellow); color: var(--dark); }
+        .result-red { background: var(--red); }
+
+
+        .result-box h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+
+        .info-section {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+
+        .info-section h3 {
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.75rem;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="app-container">
+    <header>
+        <h1>Relacionômetro</h1>
+        <p>Medidor de Relacionamentos Saudáveis</p>
+    </header>
+
+
+    <main>
+        <!-- TELA 1: INÍCIO -->
+        <div id="screen-intro" class="screen active">
+            <div class="intro-card">
+                <h3>Bem-vinda(o)!</h3>
+                <p>Este teste interativo ajuda a identificar a dinâmica do seu relacionamento (namoro, casamento ou união estável), reconhecendo sinais de respeito ou comportamentos de controle e risco.</p>
+            </div>
+            <button class="btn" onclick="showScreen('screen-quiz')">Iniciar Avaliação</button>
+            <button class="btn btn-sos" onclick="showScreen('screen-sos')">Apoio & Emergência (Ligue 180)</button>
+        </div>
+
+
+        <!-- TELA 2: QUESTIONÁRIO -->
+        <div id="screen-quiz" class="screen">
+            <p style="margin-bottom: 15px; font-size: 0.85rem; color: #666;">Responda com sinceridade considerando a sua rotina:</p>
+            <form id="quiz-form">
+                <div class="question-card">
+                    <p class="question-title">1. Seu parceiro(a) respeita suas opiniões, decisões e momentos de privacidade?</p>
+                    <div class="options">
+                        <button type="button" class="option-btn" onclick="selectOption(1, 0, this)">Sempre</button>
+                        <button type="button" class="option-btn" onclick="selectOption(1, 1, this)">Às vezes</button>
+                        <button type="button" class="option-btn" onclick="selectOption(1, 2, this)">Raramente/Nunca</button>
+                    </div>
+                </div>
+
+
+                <div class="question-card">
+                    <p class="question-title">2. Há exigência para checar suas redes sociais, celular ou saber com quem você conversa?</p>
+                    <div class="options">
+                        <button type="button" class="option-btn" onclick="selectOption(2, 0, this)">Nunca</button>
+                        <button type="button" class="option-btn" onclick="selectOption(2, 1, this)">Às vezes</button>
+                        <button type="button" class="option-btn" onclick="selectOption(2, 2, this)">Frequentemente</button>
+                    </div>
+                </div>
+
+
+                <div class="question-card">
+                    <p class="question-title">3. Seu parceiro(a) tenta controlar suas roupas, rotina ou afasta você de amigos e familiares?</p>
+                    <div class="options">
+                        <button type="button" class="option-btn" onclick="selectOption(3, 0, this)">Nunca</button>
+                        <button type="button" class="option-btn" onclick="selectOption(3, 1, this)">Às vezes</button>
+                        <button type="button" class="option-btn" onclick="selectOption(3, 2, this)">Frequentemente</button>
+                    </div>
+                </div>
+
+
+                <div class="question-card">
+                    <p class="question-title">4. Você já sofreu ameaças, ofensas verbais, chantagem emocional ou agressão física/patrimonial?</p>
+                    <div class="options">
+                        <button type="button" class="option-btn" onclick="selectOption(4, 0, this)">Nunca</button>
+                        <button type="button" class="option-btn" onclick="selectOption(4, 2, this)">Sim, já ocorreu</button>
+                    </div>
+                </div>
+            </form>
+            <button class="btn" onclick="calculateResult()">Ver Resultado</button>
+        </div>
+
+
+        <!-- TELA 3: RESULTADO -->
+        <div id="screen-result" class="screen">
+            <div id="result-box" class="result-box">
+                <h2 id="result-title">Analisando...</h2>
+                <p id="result-desc"></p>
+            </div>
+
+
+            <div class="info-section">
+                <h3>Entenda os Tipos de Violência (Lei Maria da Penha)</h3>
+                <p><strong>Física:</strong> Qualquer conduta que ofenda a integridade corporal.</p><br>
+                <p><strong>Psicológica:</strong> Ameaças, humilhações, isolamento ou controle constante.</p><br>
+                <p><strong>Patrimonial/Moral:</strong> Retenção de documentos/dinheiro ou calúnia/injúria.</p>
+            </div>
+
+
+            <button class="btn" onclick="showScreen('screen-quiz')">Refazer Teste</button>
+            <button class="btn btn-sos" onclick="showScreen('screen-sos')">Ver Rede de Apoio</button>
+        </div>
+
+
+        <!-- TELA 4: REDE DE APOIO / SOS -->
+        <div id="screen-sos" class="screen">
+            <div class="info-section" style="border-left: 5px solid var(--red);">
+                <h3>Canais de Emergência</h3>
+                <p><strong>Central de Atendimento à Mulher:</strong> Ligue 180 (Gratuito e Anônimo)</p><br>
+                <p><strong>Polícia Militar (Emergência):</strong> Ligue 190</p>
+            </div>
+
+
+            <div class="info-section">
+                <h3>Atendimento Local em Porto Alegre</h3>
+                <p><strong>Delegacia da Mulher (DEACM):</strong> Atendimento especializado e medidas protetivas.</p><br>
+                <p><strong>CRAS / CREAS:</strong> Acompanhamento social e psicológico na rede pública.</p>
+            </div>
+
+
+            <button class="btn" onclick="showScreen('screen-intro')">Voltar ao Início</button>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>Projeto de Pesquisa - EMEB Dr. Liberato Salzano Vieira da Cunha (2026)</p>
+        <p>Tecnologia Social Preventiva de Baixo Custo</p>
+    </footer>
+</div>
+
+
+<script>
+    const answers = {};
+
+
+    function showScreen(screenId) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(screenId).classList.add('active');
+        window.scrollTo(0,0);
+    }
+
+
+    function selectOption(qNum, value, btn) {
+        answers[qNum] = value;
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+    }
+
+
+    function calculateResult() {
+        if (Object.keys(answers).length < 4) {
+            alert("Por favor, responda a todas as perguntas antes de continuar.");
+            return;
+        }
+
+
+        let totalScore = 0;
+        for (let key in answers) {
+            totalScore += answers[key];
+        }
+
+
+        const box = document.getElementById('result-box');
+        const title = document.getElementById('result-title');
+        const desc = document.getElementById('result-desc');
+
+
+        box.className = 'result-box ';
+
+
+        if (totalScore <= 1) {
+            box.classList.add('result-green');
+            title.innerText = "Zona Verde: Relacionamento Saudável";
+            desc.innerText = "Sua relação demonstra respeito, autonomia e diálogo equilibrado. Continue cultivando a parceria e a individualidade!";
+        } else if (totalScore <= 3) {
+            box.classList.add('result-yellow');
+            title.innerText = "Zona Amarela: Sinais de Alerta";
+            desc.innerText = "Atenção a comportamentos iniciais de ciúme, controle ou isolamento. Fique atenta(o) aos seus limites e busque diálogo.";
+        } else {
+            box.classList.add('result-red');
+            title.innerText = "Zona Vermelha: Ciclo de Abuso e Risco";
+            desc.innerText = "Alerta de comportamentos abusivos e violação de direitos! Busque orientação e apoio nos canais especializados.";
+        }
+
+
+        showScreen('screen-result');
+    }
+</script>
+
+
+</body>
+</html>
