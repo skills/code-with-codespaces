@@ -1,0 +1,24 @@
+{
+  "name": "Python & Web Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
+  
+  // VS Code extensions jo automatically install ho jayengi
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",              // Python support
+        "ms-python.vscode-pylance",      // Python language server
+        "esbenp.prettier-code-formatter", // Code formatter
+        "dbaeumer.vscode-eslint",        // Linting
+        "eamodio.gitlens"                // Advanced Git features
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "python.linting.enabled": true
+      }
+    },
+  },
+
+  // Codespace khultay hi yeh command chal sakti hai
+  "postCreateCommand": "python --version"
+}
