@@ -1,0 +1,7 @@
+# These owners will be the default owners for everything in
+# the repo.
+*       SithubShabihaz
+
+# You can also specify owners for specific directories or files:
+# /clubs/          @teacher-username
+# /sports/         @sports-coordinator-username
